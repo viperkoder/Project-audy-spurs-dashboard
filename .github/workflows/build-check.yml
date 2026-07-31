@@ -1,0 +1,40 @@
+name: Build check
+
+# Runs on every push/PR. Catches broken data files, bad JSX, exposed
+# secrets, and other build-breaking mistakes BEFORE they reach main —
+# this is the safety net the project didn't have before.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Secret scan
+        run: npm run check-secrets
+
+      - name: Build
+        run: node build.js
+
+      - name: Verify build output
+        run: |
+          test -f dist/index.html || (echo "dist/index.html missing" && exit 1)
+          test -f dist/manifest.json || (echo "dist/manifest.json missing" && exit 1)
+          test -f dist/sw.js || (echo "dist/sw.js missing" && exit 1)
+          SIZE=$(stat -c%s dist/index.html)
+          if [ "$SIZE" -lt 20000 ]; then
+            echo "dist/index.html suspiciously small ($SIZE bytes)"; exit 1
+          fi
+          echo "Build output verified OK ($SIZE bytes)"

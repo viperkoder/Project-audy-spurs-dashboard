@@ -1,0 +1,13 @@
+{
+  "name": "thfc-dashboard",
+  "version": "6.0.0",
+  "private": true,
+  "description": "Tottenham Hotspur fan dashboard — modular React (no framework), esbuild-compiled, single-file deploy.",
+  "scripts": {
+    "build": "node build.js",
+    "check-secrets": "node scripts/check-secrets.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}

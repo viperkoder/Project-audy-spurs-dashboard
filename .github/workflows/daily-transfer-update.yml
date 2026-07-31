@@ -1,0 +1,71 @@
+name: Daily transfer update
+
+# Cloud replacement for the local launchd automation. Runs the exact same
+# automation/update-dashboard.js script that update-dashboard.js has always
+# used — same RSS sources, same Claude-based reconciliation, same
+# update-log.txt output — but from GitHub's servers instead of your Mac.
+#
+# Why this exists: the local launchd schedule only fires if your Mac is
+# awake at 7am with a network connection. This runs regardless, at zero
+# cost (GitHub Actions free tier covers this many times over for a repo
+# this size — a few minutes/day against 2,000 free minutes/month on a
+# private repo, or unlimited on a public one).
+#
+# Requires one setup step: add your Anthropic API key as a repo secret
+# named ANTHROPIC_API_KEY (Settings → Secrets and variables → Actions →
+# New repository secret). Nothing else to configure.
+#
+# Same conservative behaviour as local: only confirmed/high-confidence
+# changes get applied automatically. Ambiguous stuff is written to
+# automation/update-log.txt for you to read, same as before — check the
+# Actions run summary or update-log.txt in the repo after each run.
+
+on:
+  schedule:
+    # 06:00 UTC daily ≈ 7am UK time (6am during BST) — adjust to taste.
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-transfer-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Write API key for this run only
+        run: echo "ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}" > automation/.env
+
+      - name: Run daily update
+        run: node automation/update-dashboard.js
+
+      - name: Remove API key file before anything is committed
+        if: always()
+        run: rm -f automation/.env
+
+      - name: Commit and push if anything changed
+        run: |
+          git config user.name "thfc-dashboard-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/data/transfers.js src/data/squad.js src/data/news.js dist/ automation/update-log.txt
+          if git diff --cached --quiet; then
+            echo "No changes today — nothing to commit."
+          else
+            git commit -m "Automated daily update — $(date -u +%Y-%m-%d)"
+            git push
+          fi

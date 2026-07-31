@@ -1,0 +1,5 @@
+# Never commit your API key
+automation/.env
+
+# Node
+node_modules/

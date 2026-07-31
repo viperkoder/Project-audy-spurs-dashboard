@@ -1,0 +1,19 @@
+04/07/2026, 19:12:53
+Headlines checked: 60 across 6 sources
+Changes applied: YES
+
+Summary: Sandro Tonali and Mateus Fernandes are already confirmed in the current data, but today's headlines surface several new items: Kinsky has signed a new deal (needs squad update), Palhinha's departure is now self-confirmed by the player, Kulusevski's injury situation has a major new concern raised, Bergvall has been told he will not be sold despite an exit request, Vicario is making demands over his departure, and there are fresh rumours around Akliouche, El Mala, Brobbey and a rejected £21.4m bid for a third midfielder. Postecoglou is confirmed at Al-Nassr.
+
+🗣 Daily Whispers added: 2
+
+⚠ FLAGGED FOR YOUR REVIEW (not auto-applied):
+  - KINSKY NEW DEAL: BBC Sport headline 'Tottenham goalkeeper Kinsky signs new deal' — squad.js already shows con:'2031+1' and st:'NO.1 — NEW 5YR DEAL' so this may already be captured, but the BBC confirmation today should be cross-checked to ensure the contract length and start date are accurate in squad.js.
+  - ARCHIE GRAY TRANSFER: SpursWeb headline ''Tottenham sources deny there has been a bid' — Archie Gray transfer story takes fresh twist'. Gray is currently listed as CORE in squad.js. If a bid has been received (even denied), this could become a departure to monitor. Needs manual watch.
+  - £21.4M BID REJECTED — THIRD MIDFIELDER: SpursWeb reports a £21.4m bid rejected for a 'third midfielder signing after Tonali and Fernandes'. Player not named in available headlines. Needs sourcing — if identified, may need a new TRANSFER_BRIEFS entry.
+  - ROMERO SALE INTEREST: SpursWeb headline 'Barcelona put Cristian Romero on backburner as rivals push hard for £51m Tottenham captain'. Romero is currently listed as RECOVERING in squad.js with no departure flag. Barcelona stepping back is positive, but 'rivals pushing hard' suggests a potential exit is live. Monitor closely.
+  - PALHINHA DECISION / DE ZERBI STANCE: Google News/CaughtOffside headline 'Tottenham make Palhinha decision as Roberto De Zerbi stance becomes clear'. Could contain detail about whether Spurs are actively seeking a replacement DM — worth reading in full before updating transfer targets.
+  - RAFAL LEAO / THREE SHORTLISTED FORWARDS: football.london AD FEATURE mentions 'Rafael Leao's price changes as Tottenham hold transfer talks with three on shortlist'. Marked as AD FEATURE so treat with caution, but if underlying sourcing is real this is significant attacking recruitment intel.
+  - HARRY KANE RETURN ANGLE: Mirror headline 'How Tottenham's £237m spending spree could pave the way for the return of Harry Kane'. Speculative feature piece, but worth flagging — no sourcing cited, do not add to transfers without corroboration.
+  - BERGVALL OFFICIALLY TOLD HE WILL NOT BE SOLD: SpursWeb confirms Spurs informed Bergvall he will not be sold despite exit request and De Zerbi interest from outside. Squad.js currently shows st:'TRANSFER REQUESTED' — consider whether to update status to reflect club's refusal to sell, e.g. 'STAY — CLUB DECISION'.
+  - POSTECOGLOU TO AL-NASSR: Confirmed by BBC, football.london, Google News and TNT Sports. No squad.js impact, but worth noting formally for dashboard context/news feed.
+  - STADIUM PROPOSAL: football.london 'Spurs submit proposal to make important change to Tottenham Hotspur Stadium' — no squad or transfer impact but relevant for a wider dashboard news ticker if one exists.
