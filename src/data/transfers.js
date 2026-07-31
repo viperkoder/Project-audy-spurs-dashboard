@@ -13,7 +13,7 @@ export const TRANSFER_BRIEFS = [
   },
   {
     player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:82, st:"hot", date:"17 Jul",
-    brief:"Now the most advanced of Spurs' two winger pursuits. Romano has reiterated — pinning his own earlier reporting back to the top of his feed — that Savinho has already said yes to the move and is being described as Tottenham's 'next big name' and likely seventh major signing of the summer. Personal terms are done; Spurs are waiting on City's final sign-off with conversations 'ongoing' and City reportedly willing to sell for around £60m this time (they blocked it last summer while chasing Rodrygo as a replacement, which never materialised, and re-signed Savinho instead). With City no longer holding out for a like-for-like replacement, this looks like the closest of all of Spurs' winger targets to being done — marginally ahead of Leao on advancement, even if Leao's is the flashier name."
+    brief:"Now the most advanced of Spurs' two winger pursuits. Romano has reiterated — pinning his own earlier reporting back to the top of his feed — that Savinho has already said yes to the move and is being described as Tottenham's 'next big name' and likely seventh major signing of the summer. Personal terms are done; Spurs are waiting on City's final sign-off with conversations 'ongoing' and City reportedly willing to sell for around £60m this time (they blocked it last summer while chasing Rodrygo as a replacement, which never materialised, and re-signed Savinho instead). With City no longer holding out for a like-for-like replacement, this looks like the closest of all of Spurs' winger targets to being done — marginally ahead of Leao on advancement, even if Leao's is the flashier name. UPDATE 31 Jul (Twitter Pulse, anon-sourced): chatter describes Spurs as 'growing impatient' — City reportedly indicated a green light once Savinho returned to the UK, then delayed further once he did. Reads as continued friction rather than a stalled deal, consistent with today's whisper that paperwork is 'nearly administrative.'"
   },
   {
     player:"Carlos Baleba", e:"🇨🇲", from:"Brighton", fee:"100m", like:38, st:"warm", date:"14 Jul",
@@ -73,11 +73,18 @@ export const CONFIRMED = [
 // talks reported with any club. Framed as the player's own choice now, not
 // an expected exit. (Sources: football365, caughtoffside, fotmob,
 // sportingpedia — 30 Jul 2026)
+//
+// NOTE: R. Bentancur REMOVED 31 Jul 2026 — was incorrectly listed as a
+// free departure ("contract expired"). Verified against Transfermarkt +
+// multiple outlets: Tottenham actually tied him to a NEW long-term
+// contract (reported Oct 2025) — he was never a confirmed departure.
+// Earlier data appears to have misread a renewal story as an expiry.
 export const DEPARTURES = [
   {player:"N. Lankshear", note:"Middlesbrough sign Tottenham striker Lankshear — confirmed per BBC Sport. Permanent departure; no fee reported in headline."},
   {player:"M. Akhamrich", note:"Tottenham winger Akhamrich joins Leyton Orient on loan — confirmed per BBC Sport. Loan move, no fee."},
   {player:"G. Vicario", note:"Juventus CEO Giovanni Carnevali has confirmed direct interest; Spalletti has spoken to Vicario personally. Spurs have set a €15m asking price (negotiable). Complication: Vicario wants ~€4m/yr after tax, above Juve's wage discipline, and Juve's actual first choice is Aston Villa's Emi Martínez (who Villa won't sell) — Vicario is the fallback. A loan-with-option is being discussed as a compromise. Drags into August."},
-  {player:"C. Romero", note:"Expected to leave this summer per multiple mid-July reports. Spurs have set a €50m (~£42-43m) asking price. Romero's own preference is a return to Spain with Barcelona, though no formal bid is in yet. Inter Milan explored a move (raised while discussing Djed Spence) but see a fee near €60m as too rich. Atlético Madrid also mentioned. No bid lodged as of 17 Jul, but Spurs look increasingly resigned to selling before the window shuts."},
+  {player:"C. Romero", note:"Expected to leave this summer per multiple mid-July reports. Spurs have set a €50m (~£42-43m) asking price. Romero's own preference is a return to Spain with Barcelona, though no formal bid is in yet. Inter Milan explored a move (raised while discussing Djed Spence) but see a fee near €60m as too rich. Atlético Madrid also mentioned. No bid lodged as of 17 Jul, but Spurs look increasingly resigned to selling before the window shuts. UPDATE 31 Jul (Twitter Pulse): De Zerbi confirmed on record to Alasdair Gold (Newsworthy source) that Romero wants to leave — the first direct managerial confirmation of the exit. Anonymous chatter separately adds Atlético Madrid actively negotiating alongside Inter, though no Spanish package is expected to beat Inter's current terms."},
+  {player:"P. Sarr", note:"NEW 31 Jul (Twitter Pulse, anonymous-sourced only — no Newsworthy corroboration yet, treat as early-stage): Aston Villa preparing a bid, described as holding 'serious interest.' Personal terms reportedly not expected to be an issue. A German club is also credited with interest."},
   {player:"L. Bergvall", note:"Handed in a transfer request citing lack of first-team football (112 mins under De Zerbi all season). Nottingham Forest had an opening £38m bid rejected and are expected to return with an improved offer — the chance to work under Oliver Glasner is reportedly a big pull for the player. Spurs are willing to sell but only on their valuation; will keep him if it isn't met."},
   {player:"Richarlison", note:"Spurs are ready to sell with a year left on his deal, partly to manage Profit & Sustainability Rules headroom after the Fernandes/Tonali spend. Asking price reported between €20-30m. Juventus have joined the race as a fallback if their move for PSG's Kolo Muani fails; an unnamed Turkish club and Orlando City (MLS) have also been mentioned, Everton links have gone cold."},
   {player:"J. Palhinha", note:"Loan spell ended and Tottenham's move to sign him permanently is now 100% dead (reliable reporting, 10 Jul) — the player has posted a farewell message to Spurs fans, contract expired 30 Jun. No permanent destination confirmed yet: Sporting CP are the most consistent link (Palhinha open to a return to Portugal) with Bayern wanting a sale rather than a loan; Benfica, Juventus and Aston Villa also mentioned."},
@@ -85,11 +92,14 @@ export const DEPARTURES = [
   {player:"Y. Bissouma",     note:"Released — contract expired Jun 30 (Official)"},
   {player:"A. Veliz",        note:"SOLD — Bahia £7.8m + add-ons + 20% sell-on. Effective 1 Jul 2026 (Official)"},
   {player:"Kolo Muani",      note:"Loan ended — returned to PSG"},
-  {player:"R. Bentancur",    note:"Contract expired Jun 30 — at WC with Uruguay"},
 ];
 
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
+  {
+    date:"31 Jul",
+    text:"Beyond the winger and Romero sagas, the whisper network flags two more threads worth watching. Aston Villa are said to be readying an approach for Pape Sarr, with personal terms viewed internally as no obstacle if Villa's bid lands — a German club is also lurking. Separately, Juventus' resistance over Kenan Yıldız hasn't stopped Spurs continuing to monitor him as a longer-term want, though nobody inside the building expects Juve to blink this window."
+  },
   {
     date:"31 Jul",
     text:"Murmurs out of the Sydney camp suggest Romero's representatives have quietly opened conversations with at least two Spanish clubs — sources describe the situation as the player 'driving his own exit' rather than waiting for Spurs to push. The £42m asking price is said to be the sticking point, but the feeling inside the tour party is that a bid is closer than the official line suggests."
