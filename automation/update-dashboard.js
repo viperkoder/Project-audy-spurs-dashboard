@@ -6,6 +6,10 @@
  * What it does:
  *   1. Fetches all RSS_SOURCES server-side (no CORS issues here, unlike the browser),
  *      including r/coys (Reddit) as a community/corroboration-only source
+ *   1b. ALSO fetches direct Twitter/X posts via Agent Reach (see TWITTER_NEWSWORTHY /
+ *      TWITTER_ANONYMOUS below) — this is the "Spurs Twitter Pulse" integration,
+ *      distinct from RSS since it reads X directly rather than secondhand via news
+ *      sites. Gracefully skipped (RSS-only) if Agent Reach isn't installed/configured yet.
  *   2. Sends fresh headlines + current dashboard data to Claude
  *   3. Claude returns confirmed transfer/injury changes (conservative) PLUS
  *      1-2 short anonymous "Daily Whispers" blurbs from the more ambiguous/rumour headlines
@@ -20,6 +24,7 @@
  *   - Auto-upload anything to GitHub — you stay in control of what goes live
  *   - Overwrite "confirmed" facts without strong new evidence
  *   - Add duplicate entries for a player already marked CONFIRMED/DEPARTED
+ *   - Ever name/attribute a TWITTER_ANONYMOUS account in any output
  *
  * Run manually to test:  node automation/update-dashboard.js
  * Scheduled automatically by: com.thfc.dailyupdate.plist (see SETUP.md)
@@ -61,6 +66,92 @@ const RSS_SOURCES = [
   { name: 'Google News',      url: 'https://news.google.com/rss/search?q=Tottenham+Hotspur&hl=en-GB&gl=GB&ceid=GB:en' },
   { name: 'r/coys (Reddit)',  url: 'https://www.reddit.com/r/coys/new.rss', isCommunity: true },
 ];
+
+// ── Spurs Twitter Pulse — direct X/Twitter reads via Agent Reach ────────────
+// (https://github.com/Panniantong/Agent-Reach). Two groups, per the
+// spurs-twitter-pulse skill spec — see claude/twitter-pulse-and-dashboard-context.md
+// in the project. NEWSWORTHY accounts are attributed by name, same as any RSS
+// source. ANONYMOUS accounts are NEVER named in output — their content only
+// ever surfaces consolidated into Daily Whispers, and is capped at 45%
+// likelihood on its own (same treatment as r/coys reposts above), reusing the
+// existing "COMMUNITY REPOST" cap logic in analyzeWithClaude()'s prompt.
+const TWITTER_NEWSWORTHY = [
+  { name: 'Fabrizio Romano', handle: 'FabrizioRomano' },
+  { name: 'David Ornstein',  handle: 'David_Ornstein' },
+  { name: 'Alasdair Gold',   handle: 'AlasdairGold' },
+  { name: 'Ben Jacobs',      handle: 'JacobsBen' },
+];
+
+const TWITTER_ANONYMOUS = [
+  'pokeefe1', 'SzymonStefanik', 'szyexcl', 'RudolphN17', 'SB8308715342770',
+  'HimothyReports', 'SecretPrem', 'Ekremkonur', 'thfcprof_intel', 'Kish_P14',
+];
+
+// NOTE: Agent Reach's exact CLI invocation hasn't been verified against a
+// live install yet — the command below (`agent-reach twitter read <handle>
+// --since 48h --json`) is a best guess based on its README and WILL need
+// adjusting once Agent Reach is actually installed and `agent-reach --help`
+// / `agent-reach twitter --help` can be checked. This function fails soft:
+// if the CLI is missing or the command shape is wrong, it logs a warning and
+// returns an empty array so the rest of the pipeline (RSS) still runs fine.
+function isAgentReachAvailable() {
+  try {
+    execSync('agent-reach --version', { stdio: 'pipe' });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function fetchTwitterAccount(handle) {
+  try {
+    const out = execSync(`agent-reach twitter read ${handle} --since 48h --json`, {
+      stdio: ['ignore', 'pipe', 'pipe'],
+      timeout: 20000,
+    }).toString('utf8');
+    const parsed = JSON.parse(out);
+    // Expect an array of { text, url, createdAt } — adjust mapping once the
+    // real Agent Reach JSON shape is confirmed.
+    return (Array.isArray(parsed) ? parsed : parsed.items || []).map(t => ({
+      title: t.text || t.title || '',
+      link: t.url || t.link || '',
+      pubDate: t.createdAt || t.pubDate || '',
+    }));
+  } catch (e) {
+    console.log(`    ✗ @${handle}: ${e.message.split('\n')[0]}`);
+    return [];
+  }
+}
+
+function fetchTwitterPulse() {
+  if (!isAgentReachAvailable()) {
+    console.log('Agent Reach not installed/configured — skipping Twitter Pulse (RSS-only run).');
+    return [];
+  }
+
+  console.log(`Fetching Twitter Pulse: ${TWITTER_NEWSWORTHY.length} newsworthy + ${TWITTER_ANONYMOUS.length} anonymous accounts...`);
+  const headlines = [];
+
+  for (const acct of TWITTER_NEWSWORTHY) {
+    const posts = fetchTwitterAccount(acct.handle);
+    console.log(`  ✓ ${acct.name} (@${acct.handle}): ${posts.length} posts`);
+    for (const p of posts) {
+      headlines.push({ title: p.title, link: p.link, pubDate: p.pubDate, source: acct.name, isCommunity: false });
+    }
+  }
+
+  for (const handle of TWITTER_ANONYMOUS) {
+    const posts = fetchTwitterAccount(handle);
+    if (posts.length) console.log(`  ✓ anonymous account: ${posts.length} posts`);
+    for (const p of posts) {
+      // source is intentionally generic — NEVER the real handle — since this
+      // string can end up in logs/prompts and must never identify the account.
+      headlines.push({ title: p.title, link: p.link, pubDate: p.pubDate, source: 'Twitter (anonymous)', isCommunity: true });
+    }
+  }
+
+  return headlines.filter(h => isSpursRelevant(h.title));
+}
 
 // ── Spurs-relevance filter ───────────────────────────────────────────────
 // Mirrors src/lib/shared.js#isSpursRelevant (duplicated here since this is a
@@ -109,7 +200,12 @@ async function fetchAllFeeds() {
   const relevant = all.filter(h => isSpursRelevant(h.title));
   const dropped = all.length - relevant.length;
   if (dropped > 0) console.log(`  ℹ Filtered out ${dropped} off-topic item(s) from loosely-scoped feeds`);
-  return relevant;
+
+  // Merge in Twitter Pulse (direct X reads) alongside the RSS set — same
+  // headline shape, so the rest of the pipeline (analyzeWithClaude, news
+  // fallback, fixture scores) treats them identically.
+  const twitterHeadlines = fetchTwitterPulse();
+  return relevant.concat(twitterHeadlines);
 }
 
 // ── Read current data files as context for Claude ───────────────────────────
@@ -121,17 +217,19 @@ function readFile(relPath) {
 async function analyzeWithClaude(headlines, currentTransfers, currentSquad) {
   const headlinesText = headlines
     .slice(0, 60)
-    .map(h => `[${h.source}${h.isCommunity ? ' — COMMUNITY REPOST' : ''}] ${h.title}`)
+    .map(h => `[${h.source}${h.isCommunity ? ' — COMMUNITY/ANONYMOUS REPOST' : ''}] ${h.title}`)
     .join('\n');
 
   const prompt = `You are updating a Tottenham Hotspur fan dashboard. Below is today's fresh news headlines, followed by the CURRENT data files for transfers and squad/injuries.
 
 Your job: identify ONLY genuinely new, verifiable changes. Be conservative — if a headline is ambiguous or you're not confident, DO NOT include it as a confirmed change. Never mark something as "confirmed" unless multiple reliable sources or official club language ("official", "confirmed", "signs", "here we go") support it. Rumours stay rumours with a likelihood percentage reflecting the latest reporting tone (e.g. "personal terms agreed" should read higher than "linked with").
 
-IMPORTANT — headlines tagged "COMMUNITY REPOST" are from r/coys (Reddit), which mostly reposts or quotes the same journalists appearing elsewhere in this list. Treat these as a CORROBORATING signal only, never a primary source:
-  - A community repost that matches a primary-source headline on the same topic can nudge likelihood up slightly (independent corroboration on the same day).
-  - A community repost with NO matching primary-source headline must NOT move a player above 45% likelihood on its own, and must NEVER be used to mark a signing/departure as confirmed.
-  - If a community repost surfaces something no primary source has covered, prefer routing it into newWhispers (speculative, unverified tone) rather than a transferBriefsUpdates entry.
+IMPORTANT — headlines tagged "COMMUNITY/ANONYMOUS REPOST" come from two lower-trust sources treated identically: r/coys (Reddit, mostly reposts/quotes the named journalists elsewhere in this list) AND a set of anonymous Twitter/X insider accounts (source shown generically as "Twitter (anonymous)" — never a real handle, and must NEVER be named or quoted directly in your output). Treat ALL of these as a CORROBORATING signal only, never a primary source:
+  - A community/anonymous repost that matches a primary-source headline on the same topic can nudge likelihood up slightly (independent corroboration on the same day).
+  - A community/anonymous repost with NO matching primary-source headline must NOT move a player above 45% likelihood on its own, and must NEVER be used to mark a signing/departure as confirmed.
+  - If a community/anonymous repost surfaces something no primary source has covered, prefer routing it into newWhispers (speculative, unverified tone) rather than a transferBriefsUpdates entry — and NEVER attribute the whisper to any specific account, named or anonymous.
+
+Headlines WITHOUT that tag (including from the named Twitter accounts — Fabrizio Romano, David Ornstein, Alasdair Gold, Ben Jacobs — same as any RSS journalist) are primary sources and can be treated with full confidence, same as BBC/Sky/etc.
 
 The likelihood percentages you assign are an editorial estimate reflecting reporting tone and source count — not a formal probability or betting odds. This is surfaced to the user with a disclaimer in the UI, so lean toward your honest best judgment rather than hedging everything toward 50%.
 
@@ -521,7 +619,7 @@ function syncSquadWithTransfers(analysis) {
     // Write changelog
     const logLines = [
       `${timestamp}`,
-      `Headlines checked: ${headlines.length} across ${RSS_SOURCES.length} sources`,
+      `Headlines checked: ${headlines.length} across ${RSS_SOURCES.length} RSS sources + Twitter Pulse`,
       `Changes applied: ${changed ? 'YES' : 'NO'}`,
       '',
       `Summary: ${analysis.summary || 'No significant changes detected.'}`,

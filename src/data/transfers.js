@@ -1,6 +1,6 @@
 // Transfer Intelligence — Summer 2026
 // Edit this file alone for transfer rumours, confirmed signings, departures.
-// Last manual verification pass: 17 Jul 2026 (cross-checked against live reporting).
+// Last manual verification pass: 31 Jul 2026 (cross-checked against live reporting).
 // Automation was down 4-17 Jul (stale project path + node PATH issue under
 // launchd) — fixed via automation/install-launchd.sh, see automation/SETUP.md.
 
@@ -12,7 +12,7 @@ export const TRANSFER_BRIEFS = [
     brief:"Leao has agreed personal terms and, per multiple outlets (football365, GiveMeSport, TNT Sports), has told Spurs he's ready to say yes even without Champions League football — a huge boost given the rival interest. New Milan boss Ruben Amorim has sanctioned an exit, deeming him surplus to requirements. Milan want €60m (~£51m) for a permanent deal but would consider an initial loan with an obligation to buy at a similar figure. Jorge Mendes is driving the deal. Saudi Pro League clubs remain circling as a fallback for the player, but Spurs are seen as the front-runners as of mid-July."
   },
   {
-    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:78, st:"hot", date:"17 Jul",
+    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:82, st:"hot", date:"17 Jul",
     brief:"Now the most advanced of Spurs' two winger pursuits. Romano has reiterated — pinning his own earlier reporting back to the top of his feed — that Savinho has already said yes to the move and is being described as Tottenham's 'next big name' and likely seventh major signing of the summer. Personal terms are done; Spurs are waiting on City's final sign-off with conversations 'ongoing' and City reportedly willing to sell for around £60m this time (they blocked it last summer while chasing Rodrygo as a replacement, which never materialised, and re-signed Savinho instead). With City no longer holding out for a like-for-like replacement, this looks like the closest of all of Spurs' winger targets to being done — marginally ahead of Leao on advancement, even if Leao's is the flashier name."
   },
   {
@@ -65,10 +65,19 @@ export const CONFIRMED = [
   },
 ];
 
+// NOTE: D. Spence REMOVED from Departures 31 Jul 2026 — De Zerbi's stance
+// reversed after Spence's strong World Cup form (vs Norway and Argentina).
+// Manager now wants him to stay: "I would like you to stay if you want to
+// stay. If you don't want to stay, if you want to leave, then you have to
+// leave." Liverpool and Everton interest remains credited but no advanced
+// talks reported with any club. Framed as the player's own choice now, not
+// an expected exit. (Sources: football365, caughtoffside, fotmob,
+// sportingpedia — 30 Jul 2026)
 export const DEPARTURES = [
+  {player:"N. Lankshear", note:"Middlesbrough sign Tottenham striker Lankshear — confirmed per BBC Sport. Permanent departure; no fee reported in headline."},
+  {player:"M. Akhamrich", note:"Tottenham winger Akhamrich joins Leyton Orient on loan — confirmed per BBC Sport. Loan move, no fee."},
   {player:"G. Vicario", note:"Juventus CEO Giovanni Carnevali has confirmed direct interest; Spalletti has spoken to Vicario personally. Spurs have set a €15m asking price (negotiable). Complication: Vicario wants ~€4m/yr after tax, above Juve's wage discipline, and Juve's actual first choice is Aston Villa's Emi Martínez (who Villa won't sell) — Vicario is the fallback. A loan-with-option is being discussed as a compromise. Drags into August."},
   {player:"C. Romero", note:"Expected to leave this summer per multiple mid-July reports. Spurs have set a €50m (~£42-43m) asking price. Romero's own preference is a return to Spain with Barcelona, though no formal bid is in yet. Inter Milan explored a move (raised while discussing Djed Spence) but see a fee near €60m as too rich. Atlético Madrid also mentioned. No bid lodged as of 17 Jul, but Spurs look increasingly resigned to selling before the window shuts."},
-  {player:"D. Spence", note:"Inter Milan in talks (Romano) after losing Denzel Dumfries to Real Madrid — see him as their top right wing-back target. De Zerbi has told Spence directly he's not part of next season's plans. Valuation gap: Spurs want ~£40m, Inter want to pay €25-30m (~£21-26m). Liverpool also credited with interest, which could push the fee up."},
   {player:"L. Bergvall", note:"Handed in a transfer request citing lack of first-team football (112 mins under De Zerbi all season). Nottingham Forest had an opening £38m bid rejected and are expected to return with an improved offer — the chance to work under Oliver Glasner is reportedly a big pull for the player. Spurs are willing to sell but only on their valuation; will keep him if it isn't met."},
   {player:"Richarlison", note:"Spurs are ready to sell with a year left on his deal, partly to manage Profit & Sustainability Rules headroom after the Fernandes/Tonali spend. Asking price reported between €20-30m. Juventus have joined the race as a fallback if their move for PSG's Kolo Muani fails; an unnamed Turkish club and Orlando City (MLS) have also been mentioned, Everton links have gone cold."},
   {player:"J. Palhinha", note:"Loan spell ended and Tottenham's move to sign him permanently is now 100% dead (reliable reporting, 10 Jul) — the player has posted a farewell message to Spurs fans, contract expired 30 Jun. No permanent destination confirmed yet: Sporting CP are the most consistent link (Palhinha open to a return to Portugal) with Bayern wanting a sale rather than a loan; Benfica, Juventus and Aston Villa also mentioned."},
@@ -81,6 +90,14 @@ export const DEPARTURES = [
 
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
+  {
+    date:"31 Jul",
+    text:"Murmurs out of the Sydney camp suggest Romero's representatives have quietly opened conversations with at least two Spanish clubs — sources describe the situation as the player 'driving his own exit' rather than waiting for Spurs to push. The £42m asking price is said to be the sticking point, but the feeling inside the tour party is that a bid is closer than the official line suggests."
+  },
+  {
+    date:"31 Jul",
+    text:"De Zerbi's 'bomba' language at today's press conference wasn't accidental. Word is the manager was given a green light before speaking — whatever is imminent has already cleared the desk of Daniel Levy. Staff are not expecting it to be Savinho, whose paperwork is described as 'nearly administrative' at this point. Something else is moving."
+  },
   {
     date:"17 Jul",
     text:"Two stories settled, for the record. Kane: he's chosen not to trigger his release clause and is signing a one-year extension at Bayern — the reunion talk was real interest, not fiction, but it's off for now. Archie Gray: Newcastle's swap approach and the 'sources deny a bid' story both went nowhere — De Zerbi has told the squad directly that Gray isn't for sale at any price, full stop. Neither needs further tracking as a live rumour."
@@ -96,25 +113,5 @@ export const ANON_BRIEFS = [
   {
     date:"4 Jul",
     text:"Whispers from inside Hotspur Way suggest Bergvall's situation is more complicated than the official line. The club told him firmly he won't be sold cheaply — but staff privately acknowledge the player's discontent is genuine. Whether that quiet understanding leads anywhere before the window closes is a question nobody inside N17 is answering directly."
-  },
-  {
-    date:"4 Jul",
-    text:"Vicario's camp are playing hardball. The goalkeeper is understood to be pushing for guarantees over his next destination before greenlighting any exit — Juventus are keen but the player hasn't committed. The training ground view is that this one drags into August."
-  },
-  {
-    date:"1 Jul",
-    text:"The mood inside the training ground following the Fernandes agreement is described as genuinely electric. De Zerbi has been hands-on in every negotiation this summer — a stark contrast to previous regimes."
-  },
-  {
-    date:"30 Jun",
-    text:"Word from N17 is that Tonali has been told by his own representatives to be patient — Spurs are not walking away. The club view the Fernandes deal as proof they can now compete for any target."
-  },
-  {
-    date:"28 Jun",
-    text:"Sources suggest Bergvall's exit is being treated internally as a blessing — De Zerbi was always planning to reshape the midfield and the transfer fee received will help fund further business."
-  },
-  {
-    date:"25 Jun",
-    text:"Background chatter suggests Vicario exit could be finalised within days once a buying club agrees personal terms — internally seen as a formality. Kinsky's new deal was fast-tracked to close the door on any suitors."
   },
 ];
