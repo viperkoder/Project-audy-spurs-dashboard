@@ -22,7 +22,7 @@ const esbuild = require('esbuild');
 const { execSync } = require('child_process');
 
 const ROOT = __dirname;
-const OUT_DIR = path.join(ROOT, 'dist');
+const OUT_DIR = path.join(ROOT, 'docs');
 
 // ── Step 0: secret scan ─────────────────────────────────────────────────────
 // Refuses to build if a live-looking API key is found anywhere it shouldn't
@@ -191,6 +191,6 @@ if (problems.length) {
 const rawKB = Math.round(Buffer.byteLength(rawBundle) / 1024);
 const minKB = Math.round(Buffer.byteLength(minified) / 1024);
 console.log(`\n✓ Build passed smoke checks.`);
-console.log(`  dist/index.html   ${Math.round(finalHtml.length / 1024)}KB total (bundle: ${rawKB}KB source -> ${minKB}KB minified)`);
-console.log(`  dist/manifest.json copied, dist/sw.js versioned (cache: thfc-dashboard-${buildVersion})`);
-console.log(`  Upload dist/index.html + dist/manifest.json + dist/sw.js to GitHub Pages (all three needed for PWA install).\n`);
+console.log(`  docs/index.html   ${Math.round(finalHtml.length / 1024)}KB total (bundle: ${rawKB}KB source -> ${minKB}KB minified)`);
+console.log(`  docs/manifest.json copied, docs/sw.js versioned (cache: thfc-dashboard-${buildVersion})`);
+console.log(`  Upload docs/index.html + docs/manifest.json + docs/sw.js to GitHub Pages (all three needed for PWA install).\n`);
