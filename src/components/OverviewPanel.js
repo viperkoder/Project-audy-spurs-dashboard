@@ -6,6 +6,16 @@ import { ANON_BRIEFS } from '../data/transfers.js';
 import { WH, Chip } from '../lib/shared.js';
 import { RadialGauge, CompareBar, InlineBar } from '../lib/charts.js';
 
+// Parses "2 Aug" style dates (no year) into a sortable value, assuming
+// current year. Used only to pick the truly-latest whisper regardless of
+// array insertion order (automation appends to the end of ANON_BRIEFS,
+// so index 0 is not reliably the newest entry).
+function parseWhisperDate(d){
+  const months={Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+  const [day,mon]=d.split(" ");
+  return new Date(new Date().getFullYear(),months[mon]??0,parseInt(day,10)).getTime();
+}
+
 export function OverviewPanel({liveNews}){
   // Derived analyst stats — computed from the STANDINGS data that's already
   // here, not fabricated. This is the "why it matters" layer: raw GF/GA are
@@ -49,7 +59,7 @@ export function OverviewPanel({liveNews}){
               <div style={{fontSize:10,color:P.muted,marginTop:5}}>{n.source} · {n.date}</div>
             </a>
           ))}
-          {ANON_BRIEFS.length>0&&(()=>{const w=ANON_BRIEFS[0];return(
+          {ANON_BRIEFS.length>0&&(()=>{const w=[...ANON_BRIEFS].sort((a,b)=>parseWhisperDate(b.date)-parseWhisperDate(a.date))[0];return(
             <div style={{padding:"10px 12px",background:P.bgCard,borderRadius:6,
               border:`1px solid ${P.purple}44`,borderLeft:`3px solid ${P.purple}`}}>
               <div style={{fontSize:10,color:P.purple,fontWeight:800,letterSpacing:"0.08em",marginBottom:4}}>LATEST WHISPER</div>
