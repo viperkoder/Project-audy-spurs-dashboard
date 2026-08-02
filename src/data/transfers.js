@@ -12,7 +12,7 @@ export const TRANSFER_BRIEFS = [
     brief:"Leao has agreed personal terms and, per multiple outlets (football365, GiveMeSport, TNT Sports), has told Spurs he's ready to say yes even without Champions League football — a huge boost given the rival interest. New Milan boss Ruben Amorim has sanctioned an exit, deeming him surplus to requirements. Milan want €60m (~£51m) for a permanent deal but would consider an initial loan with an obligation to buy at a similar figure. Jorge Mendes is driving the deal. Saudi Pro League clubs remain circling as a fallback for the player, but Spurs are seen as the front-runners as of mid-July."
   },
   {
-    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:82, st:"hot", date:"17 Jul",
+    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:85, st:"hot", date:"17 Jul",
     brief:"Now the most advanced of Spurs' two winger pursuits. Romano has reiterated — pinning his own earlier reporting back to the top of his feed — that Savinho has already said yes to the move and is being described as Tottenham's 'next big name' and likely seventh major signing of the summer. Personal terms are done; Spurs are waiting on City's final sign-off with conversations 'ongoing' and City reportedly willing to sell for around £60m this time (they blocked it last summer while chasing Rodrygo as a replacement, which never materialised, and re-signed Savinho instead). With City no longer holding out for a like-for-like replacement, this looks like the closest of all of Spurs' winger targets to being done — marginally ahead of Leao on advancement, even if Leao's is the flashier name. UPDATE 31 Jul (Twitter Pulse, anon-sourced): chatter describes Spurs as 'growing impatient' — City reportedly indicated a green light once Savinho returned to the UK, then delayed further once he did. Reads as continued friction rather than a stalled deal, consistent with today's whisper that paperwork is 'nearly administrative.'"
   },
   {
@@ -97,6 +97,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"2 Aug",
+    text:"Word filtering through from pre-season is that De Zerbi's public comments about Richarlison — 'sometimes he wants to leave' — weren't accidental. The manager is understood to have spoken to the Brazilian directly about his future, and the feeling inside the tour party is that Richarlison's own answer to De Zerbi was less than emphatic. The exit door remains open; the question is whether anyone meets Spurs' asking price before it closes."
+  },
+  {
+    date:"2 Aug",
+    text:"The Osimhen link has caught people inside Hotspur Way off-guard — or at least that's what they'd like you to think. The 'shock approach' framing from football.london suggests this isn't a fully formed pursuit yet, but De Zerbi's fingerprints are on it: the manager is said to be driving the push personally, and the word 'bomba' has been floating around the camp for a reason. Whether Spurs can structure a deal that works financially — given what's already been spent — is the real question nobody is answering directly."
+  },
+  {
     date:"31 Jul",
     text:"Beyond the winger and Romero sagas, the whisper network flags two more threads worth watching. Aston Villa are said to be readying an approach for Pape Sarr, with personal terms viewed internally as no obstacle if Villa's bid lands — a German club is also lurking. Separately, Juventus' resistance over Kenan Yıldız hasn't stopped Spurs continuing to monitor him as a longer-term want, though nobody inside the building expects Juve to blink this window."
   },
@@ -111,17 +119,5 @@ export const ANON_BRIEFS = [
   {
     date:"17 Jul",
     text:"Two stories settled, for the record. Kane: he's chosen not to trigger his release clause and is signing a one-year extension at Bayern — the reunion talk was real interest, not fiction, but it's off for now. Archie Gray: Newcastle's swap approach and the 'sources deny a bid' story both went nowhere — De Zerbi has told the squad directly that Gray isn't for sale at any price, full stop. Neither needs further tracking as a live rumour."
-  },
-  {
-    date:"16 Jul",
-    text:"Word inside the building is that this is no longer a straight Leao-or-Savinho call — with Fernandes and Tonali paid for, the recruitment team believe there's a route to funding both if the outgoing pipeline (Romero, Spence, Richarlison, Vicario) clears in time. PSR headroom is the real constraint now, not scouting conviction. Staff are said to be quietly confident Leao gets prioritised first given the personal terms are furthest along."
-  },
-  {
-    date:"9 Jul",
-    text:"Word inside the building is that the mood has shifted decisively toward Leao over the last few days. Savinho was the long-standing priority, but sources close to the recruitment team say the player's willingness to accept a move without Champions League football — something Savinho's camp were said to be less relaxed about — tipped the internal debate. Kroupi is increasingly viewed as a 2027 target rather than this summer, given Bournemouth's refusal to engage."
-  },
-  {
-    date:"4 Jul",
-    text:"Whispers from inside Hotspur Way suggest Bergvall's situation is more complicated than the official line. The club told him firmly he won't be sold cheaply — but staff privately acknowledge the player's discontent is genuine. Whether that quiet understanding leads anywhere before the window closes is a question nobody inside N17 is answering directly."
   },
 ];
