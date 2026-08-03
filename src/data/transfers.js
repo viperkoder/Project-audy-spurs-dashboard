@@ -12,7 +12,7 @@ export const TRANSFER_BRIEFS = [
     brief:"Leao has agreed personal terms and, per multiple outlets (football365, GiveMeSport, TNT Sports), has told Spurs he's ready to say yes even without Champions League football — a huge boost given the rival interest. New Milan boss Ruben Amorim has sanctioned an exit, deeming him surplus to requirements. Milan want €60m (~£51m) for a permanent deal but would consider an initial loan with an obligation to buy at a similar figure. Jorge Mendes is driving the deal. Saudi Pro League clubs remain circling as a fallback for the player, but Spurs are seen as the front-runners as of mid-July."
   },
   {
-    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:85, st:"hot", date:"17 Jul",
+    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:82, st:"hot", date:"17 Jul",
     brief:"Now the most advanced of Spurs' two winger pursuits. Romano has reiterated — pinning his own earlier reporting back to the top of his feed — that Savinho has already said yes to the move and is being described as Tottenham's 'next big name' and likely seventh major signing of the summer. Personal terms are done; Spurs are waiting on City's final sign-off with conversations 'ongoing' and City reportedly willing to sell for around £60m this time (they blocked it last summer while chasing Rodrygo as a replacement, which never materialised, and re-signed Savinho instead). With City no longer holding out for a like-for-like replacement, this looks like the closest of all of Spurs' winger targets to being done — marginally ahead of Leao on advancement, even if Leao's is the flashier name. UPDATE 31 Jul (Twitter Pulse, anon-sourced): chatter describes Spurs as 'growing impatient' — City reportedly indicated a green light once Savinho returned to the UK, then delayed further once he did. Reads as continued friction rather than a stalled deal, consistent with today's whisper that paperwork is 'nearly administrative.'"
   },
   {
@@ -97,6 +97,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"3 Aug",
+    text:"Word filtering out of pre-season is that the Osimhen approach is more real than the 'shock' framing suggests. De Zerbi is said to be personally driving the push for a world-class striker — the 'bomba' language at recent press conferences wasn't decorative. Whether the finances stack up after a record-breaking summer is the question nobody is answering directly, but the name is apparently being spoken openly enough inside Hotspur Way that staff have stopped treating it as a fantasy."
+  },
+  {
+    date:"3 Aug",
+    text:"The Mikey Moore situation is moving faster than Spurs might like. An official bid has reportedly landed from at least one club, with the Bundesliga understood to be leading the race for the teenager. The loan-versus-permanent question hasn't been settled internally — but the sense is that if the right development opportunity arrives, Spurs won't stand in his way this summer."
+  },
+  {
     date:"2 Aug",
     text:"Word filtering through from pre-season is that De Zerbi's public comments about Richarlison — 'sometimes he wants to leave' — weren't accidental. The manager is understood to have spoken to the Brazilian directly about his future, and the feeling inside the tour party is that Richarlison's own answer to De Zerbi was less than emphatic. The exit door remains open; the question is whether anyone meets Spurs' asking price before it closes."
   },
@@ -111,13 +119,5 @@ export const ANON_BRIEFS = [
   {
     date:"31 Jul",
     text:"Murmurs out of the Sydney camp suggest Romero's representatives have quietly opened conversations with at least two Spanish clubs — sources describe the situation as the player 'driving his own exit' rather than waiting for Spurs to push. The £42m asking price is said to be the sticking point, but the feeling inside the tour party is that a bid is closer than the official line suggests."
-  },
-  {
-    date:"31 Jul",
-    text:"De Zerbi's 'bomba' language at today's press conference wasn't accidental. Word is the manager was given a green light before speaking — whatever is imminent has already cleared the desk of Daniel Levy. Staff are not expecting it to be Savinho, whose paperwork is described as 'nearly administrative' at this point. Something else is moving."
-  },
-  {
-    date:"17 Jul",
-    text:"Two stories settled, for the record. Kane: he's chosen not to trigger his release clause and is signing a one-year extension at Bayern — the reunion talk was real interest, not fiction, but it's off for now. Archie Gray: Newcastle's swap approach and the 'sources deny a bid' story both went nowhere — De Zerbi has told the squad directly that Gray isn't for sale at any price, full stop. Neither needs further tracking as a live rumour."
   },
 ];
