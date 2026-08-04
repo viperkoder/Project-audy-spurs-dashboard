@@ -12,7 +12,7 @@ export const TRANSFER_BRIEFS = [
     brief:"Leao has agreed personal terms and, per multiple outlets (football365, GiveMeSport, TNT Sports), has told Spurs he's ready to say yes even without Champions League football — a huge boost given the rival interest. New Milan boss Ruben Amorim has sanctioned an exit, deeming him surplus to requirements. Milan want €60m (~£51m) for a permanent deal but would consider an initial loan with an obligation to buy at a similar figure. Jorge Mendes is driving the deal. Saudi Pro League clubs remain circling as a fallback for the player, but Spurs are seen as the front-runners as of mid-July."
   },
   {
-    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:82, st:"hot", date:"17 Jul",
+    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:85, st:"hot", date:"17 Jul",
     brief:"Now the most advanced of Spurs' two winger pursuits. Romano has reiterated — pinning his own earlier reporting back to the top of his feed — that Savinho has already said yes to the move and is being described as Tottenham's 'next big name' and likely seventh major signing of the summer. Personal terms are done; Spurs are waiting on City's final sign-off with conversations 'ongoing' and City reportedly willing to sell for around £60m this time (they blocked it last summer while chasing Rodrygo as a replacement, which never materialised, and re-signed Savinho instead). With City no longer holding out for a like-for-like replacement, this looks like the closest of all of Spurs' winger targets to being done — marginally ahead of Leao on advancement, even if Leao's is the flashier name. UPDATE 31 Jul (Twitter Pulse, anon-sourced): chatter describes Spurs as 'growing impatient' — City reportedly indicated a green light once Savinho returned to the UK, then delayed further once he did. Reads as continued friction rather than a stalled deal, consistent with today's whisper that paperwork is 'nearly administrative.'"
   },
   {
@@ -80,6 +80,7 @@ export const CONFIRMED = [
 // contract (reported Oct 2025) — he was never a confirmed departure.
 // Earlier data appears to have misread a renewal story as an expiry.
 export const DEPARTURES = [
+  {player:"Manor Solomon", note:"talkSPORT (primary) reports Tottenham are open to selling Manor Solomon to a Championship club. Player has not featured for Spurs in three years per The Sun (primary). No specific club or fee confirmed yet — departure appears likely but not formally agreed."},
   {player:"N. Lankshear", note:"Middlesbrough sign Tottenham striker Lankshear — confirmed per BBC Sport. Permanent departure; no fee reported in headline."},
   {player:"M. Akhamrich", note:"Tottenham winger Akhamrich joins Leyton Orient on loan — confirmed per BBC Sport. Loan move, no fee."},
   {player:"G. Vicario", note:"Juventus CEO Giovanni Carnevali has confirmed direct interest; Spalletti has spoken to Vicario personally. Spurs have set a €15m asking price (negotiable). Complication: Vicario wants ~€4m/yr after tax, above Juve's wage discipline, and Juve's actual first choice is Aston Villa's Emi Martínez (who Villa won't sell) — Vicario is the fallback. A loan-with-option is being discussed as a compromise. Drags into August."},
@@ -97,6 +98,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"4 Aug",
+    text:"Word filtering through from today's reporting is that the Victor Osimhen approach is more than a throwaway line — football.london's 'shock' framing may actually undersell how seriously De Zerbi is pushing this internally. The 'bomba' language at press conferences has been consistent enough that people inside the building are no longer treating a world-class striker as a fantasy. Whether Spurs can engineer the finances after the most expensive summer in the club's history remains the question nobody wants to answer out loud."
+  },
+  {
+    date:"4 Aug",
+    text:"Spurs have reportedly reached out to a £43m-rated Italian defender to gauge his contract demands, per football.london — a quiet piece of business that suggests the Romero departure planning is further along than the public line implies. No name has been confirmed by a primary source, but the timing, with Romero's exit edging closer, is unlikely to be coincidental."
+  },
+  {
     date:"3 Aug",
     text:"Word filtering out of pre-season is that the Osimhen approach is more real than the 'shock' framing suggests. De Zerbi is said to be personally driving the push for a world-class striker — the 'bomba' language at recent press conferences wasn't decorative. Whether the finances stack up after a record-breaking summer is the question nobody is answering directly, but the name is apparently being spoken openly enough inside Hotspur Way that staff have stopped treating it as a fantasy."
   },
@@ -111,13 +120,5 @@ export const ANON_BRIEFS = [
   {
     date:"2 Aug",
     text:"The Osimhen link has caught people inside Hotspur Way off-guard — or at least that's what they'd like you to think. The 'shock approach' framing from football.london suggests this isn't a fully formed pursuit yet, but De Zerbi's fingerprints are on it: the manager is said to be driving the push personally, and the word 'bomba' has been floating around the camp for a reason. Whether Spurs can structure a deal that works financially — given what's already been spent — is the real question nobody is answering directly."
-  },
-  {
-    date:"31 Jul",
-    text:"Beyond the winger and Romero sagas, the whisper network flags two more threads worth watching. Aston Villa are said to be readying an approach for Pape Sarr, with personal terms viewed internally as no obstacle if Villa's bid lands — a German club is also lurking. Separately, Juventus' resistance over Kenan Yıldız hasn't stopped Spurs continuing to monitor him as a longer-term want, though nobody inside the building expects Juve to blink this window."
-  },
-  {
-    date:"31 Jul",
-    text:"Murmurs out of the Sydney camp suggest Romero's representatives have quietly opened conversations with at least two Spanish clubs — sources describe the situation as the player 'driving his own exit' rather than waiting for Spurs to push. The £42m asking price is said to be the sticking point, but the feeling inside the tour party is that a bid is closer than the official line suggests."
   },
 ];
