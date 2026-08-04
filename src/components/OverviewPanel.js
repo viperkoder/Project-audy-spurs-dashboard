@@ -7,7 +7,7 @@ import { WH, Chip } from '../lib/shared.js';
 import { RadialGauge, CompareBar, InlineBar } from '../lib/charts.js';
 
 // Parses "2 Aug" style dates (no year) into a sortable value, assuming
-// current year. Used only to pick the truly-latest whisper regardless of
+// current year. Used to sort ANON_BRIEFS newest-first regardless of
 // array insertion order (automation appends to the end of ANON_BRIEFS,
 // so index 0 is not reliably the newest entry).
 function parseWhisperDate(d){
@@ -30,24 +30,39 @@ export function OverviewPanel({liveNews}){
   // fetched once in App.js and passed down, so this always agrees with the
   // News Centre tab and doesn't re-fetch every time you switch to this tab.
   const { items: liveNewsItems } = liveNews;
+  const sortedWhispers = [...ANON_BRIEFS].sort((a,b)=>parseWhisperDate(b.date)-parseWhisperDate(a.date));
+
   return (
     <div className="fade-in" style={{display:"flex",flexDirection:"column",gap:18}}>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:8}}>
-        {[["P","38",P.white],["W","10",P.green],["D","11",P.amber],["L","17",P.red],["GF","48",P.white],["GA","57",P.muted],["PTS","41",P.gold]].map(([l,v,c])=>(
-          <div key={l} style={{textAlign:"center",padding:"12px 6px",background:P.bgCard,borderRadius:6,border:`1px solid ${P.border}`}}>
-            <div style={{fontSize:26,fontWeight:900,color:c,lineHeight:1}}>{v}</div>
-            <div style={{fontSize:11,color:P.muted,letterSpacing:"0.15em",marginTop:5,fontWeight:700}}>{l}</div>
-          </div>
-        ))}
-      </div>
 
+      {/* DAILY WHISPERS — horizontal swipeable strip, replaces the old single
+          merged card in LATEST and the full vertical list in RightFeed.js */}
+      {sortedWhispers.length>0 && (
+        <div>
+          <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:8}}>
+            <span style={{fontSize:11,color:P.purple,fontWeight:900,letterSpacing:"0.12em"}}>DAILY WHISPERS</span>
+            <div style={{flex:1,height:1,background:P.border}}/>
+          </div>
+          <div style={{display:"flex",gap:10,overflowX:"auto",scrollSnapType:"x mandatory",paddingBottom:4,WebkitOverflowScrolling:"touch"}}>
+            {sortedWhispers.map((w,i)=>(
+              <div key={i} style={{flex:"0 0 82%",maxWidth:320,scrollSnapAlign:"start",padding:"10px 12px",
+                background:P.bgCard,borderRadius:6,border:`1px solid ${P.purple}44`,borderLeft:`3px solid ${P.purple}`}}>
+                <div style={{fontSize:12,color:P.text,lineHeight:1.5,fontStyle:"italic"}}>{w.text}</div>
+                <div style={{fontSize:10,color:P.muted,marginTop:5}}>{w.date}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* LATEST — 3 live news items, no longer shares the row with a whisper card */}
       <div>
         <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:8}}>
           <span style={{fontSize:11,color:P.gold,fontWeight:900,letterSpacing:"0.12em"}}>LATEST</span>
           <div style={{flex:1,height:1,background:P.border}}/>
         </div>
         <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8}}>
-          {liveNewsItems.slice(0,2).map((n,i)=>(
+          {liveNewsItems.slice(0,3).map((n,i)=>(
             <a key={i} href={n.url} target="_blank" rel="noopener noreferrer"
               style={{display:"block",padding:"10px 12px",background:P.bgCard,borderRadius:6,
                 border:`1px solid ${P.border}`,borderLeft:`3px solid ${P.gold}`,textDecoration:"none",
@@ -59,16 +74,17 @@ export function OverviewPanel({liveNews}){
               <div style={{fontSize:10,color:P.muted,marginTop:5}}>{n.source} · {n.date}</div>
             </a>
           ))}
-          {ANON_BRIEFS.length>0&&(()=>{const w=[...ANON_BRIEFS].sort((a,b)=>parseWhisperDate(b.date)-parseWhisperDate(a.date))[0];return(
-            <div style={{padding:"10px 12px",background:P.bgCard,borderRadius:6,
-              border:`1px solid ${P.purple}44`,borderLeft:`3px solid ${P.purple}`}}>
-              <div style={{fontSize:10,color:P.purple,fontWeight:800,letterSpacing:"0.08em",marginBottom:4}}>LATEST WHISPER</div>
-              <div style={{fontSize:12,color:P.text,lineHeight:1.4,fontStyle:"italic",
-                display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{w.text}</div>
-              <div style={{fontSize:10,color:P.muted,marginTop:5}}>{w.date}</div>
-            </div>
-          );})()}
         </div>
+      </div>
+
+      {/* STATS ROW — moved down, now sits directly above Season Analysis */}
+      <div style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:8}}>
+        {[["P","38",P.white],["W","10",P.green],["D","11",P.amber],["L","17",P.red],["GF","48",P.white],["GA","57",P.muted],["PTS","41",P.gold]].map(([l,v,c])=>(
+          <div key={l} style={{textAlign:"center",padding:"12px 6px",background:P.bgCard,borderRadius:6,border:`1px solid ${P.border}`}}>
+            <div style={{fontSize:26,fontWeight:900,color:c,lineHeight:1}}>{v}</div>
+            <div style={{fontSize:11,color:P.muted,letterSpacing:"0.15em",marginTop:5,fontWeight:700}}>{l}</div>
+          </div>
+        ))}
       </div>
 
       <div>

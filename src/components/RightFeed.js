@@ -1,7 +1,8 @@
-// Right column feed — countdown, transfer alerts, daily whispers, headlines button, injury alerts.
+// Right column feed — countdown, transfer alerts, headlines button, injury alerts.
+// Daily Whispers moved to OverviewPanel.js (horizontal swipe strip) — no longer duplicated here.
 // Edit ONLY this file to change the right sidebar widgets or their order.
 import { P } from '../data/theme.js';
-import { TRANSFER_BRIEFS, ANON_BRIEFS, CONFIRMED } from '../data/transfers.js';
+import { TRANSFER_BRIEFS, CONFIRMED } from '../data/transfers.js';
 import { INJURIES } from '../data/squad.js';
 import { WH, Bar, Countdown } from '../lib/shared.js';
 
@@ -50,25 +51,7 @@ export function RightFeed({onNews,liveNews}){
         </div>
       </div>
 
-      {/* 3. DAILY WHISPERS */}
-      <div style={{background:P.bgCard,border:`1px solid ${P.purple}44`,
-        borderRadius:6,padding:'12px'}}>
-        <WH>Daily Whispers</WH>
-        <div style={{fontSize:10,color:P.muted,marginBottom:8,fontStyle:'italic'}}>
-          Anonymous club intel — no names · updated daily
-        </div>
-        <div style={{display:'flex',flexDirection:'column',gap:6}}>
-          {ANON_BRIEFS.map((b,i)=>(
-            <div key={i} style={{padding:'9px 10px',background:P.bgPanel,borderRadius:4,
-              border:`1px solid ${P.purple}33`,borderLeft:`3px solid ${P.purple}`}}>
-              <div style={{fontSize:11,color:P.text,lineHeight:1.6}}>{b.text}</div>
-              <div style={{fontSize:9,color:P.muted,marginTop:5}}>{b.date}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* 4. LATEST HEADLINES BUTTON */}
+      {/* 3. LATEST HEADLINES BUTTON */}
       <button className="news-flash" onClick={onNews} style={{padding:'12px 14px',borderRadius:6,
         border:`1px solid ${P.gold}`,background:P.goldGlow,cursor:'pointer',
         textAlign:'left',width:'100%'}}>
@@ -84,7 +67,7 @@ export function RightFeed({onNews,liveNews}){
         </div>
       </button>
 
-      {/* 5. INJURY ALERTS */}
+      {/* 4. INJURY ALERTS */}
       <div style={{background:P.injuryBg,border:`1px solid ${P.injuryBorder}55`,
         borderRadius:6,padding:'12px'}}>
         <WH>Injury Alerts</WH>
