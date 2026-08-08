@@ -45,7 +45,7 @@ export const SQUAD = [
 export const INJURIES = [
   {name:"Xavi Simons",     flag:"NL",emoji:"🇳🇱",pos:"CM",issue:"ACL right knee",        sev:"long",  ret:"20 Feb 2027"},
   {name:"Wilson Odobert",  flag:"FR",emoji:"🇫🇷",pos:"LW",issue:"ACL left knee",          sev:"long",  ret:"28 Nov 2026"},
-  {name:"Dejan Kulusevski",flag:"SE",emoji:"🇸🇪",pos:"RW",issue:"Knee (patella/cartilage) — has not played a competitive match since May 2025. Missed the entire 2025/26 season and was left out of Sweden's 2026 World Cup squad. Multiple surgeries; club and national team doctors remain cautiously optimistic he returns for 2026/27.",          sev:"long",ret:"TARGETING 2026/27 SEASON — no confirmed date"},
+  {name:"Dejan Kulusevski",flag:"SE",emoji:"🇸🇪",pos:"RW",issue:"Knee (patella/cartilage) — Roberto De Zerbi has publicly stated Kulusevski is 'fit and right' for Spurs per BBC Sport. First managerial confirmation of fitness. Squad status and injury entry should be updated to reflect De Zerbi's public statement, though no confirmed return date or competitive minutes yet.",          sev:"long",ret:"TARGETING 2026/27 SEASON — De Zerbi confirms 'fit and right' (BBC)"},
   // NOTE: Kudus REMOVED from active injuries 17 Jul 2026 — back in full pre-season
   // training, targeting the Aug 22 opener at Brentford. See squad.js SQUAD entry.
 ];
