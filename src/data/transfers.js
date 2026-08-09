@@ -99,6 +99,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"9 Aug",
+    text:"Word drifting in from the Atletico talks is that Romero's camp are not just entertaining the conversation — they're driving it. BBC Sport's confirmation that Atletico held direct talks is being read inside N17 as a sign the player's preference for Spain is hardening into something more formal. Arsenal's name keeps surfacing in the background, which nobody at the club wants to say out loud, but it's no longer being dismissed the way it was a fortnight ago."
+  },
+  {
+    date:"9 Aug",
+    text:"The Van de Ven contract noise has shifted in tone — sources close to the situation suggest this is no longer a negotiation but a formality waiting on paperwork. BBC Sport's 'close to agreeing' language is being treated inside the building as closer to done than the careful wording implies, with De Zerbi's direct involvement credited as the moment talks accelerated."
+  },
+  {
     date:"8 Aug",
     text:"Word out of pre-season is that the Van de Ven contract situation moved quickly once De Zerbi got involved directly — sources close to the player suggest the manager's personal pitch was the turning point after weeks of stalled talks. The deal isn't signed yet, but the feeling inside the camp is that it's a formality now rather than a negotiation."
   },
@@ -113,13 +121,5 @@ export const ANON_BRIEFS = [
   {
     date:"4 Aug",
     text:"Spurs have reportedly reached out to a £43m-rated Italian defender to gauge his contract demands, per football.london — a quiet piece of business that suggests the Romero departure planning is further along than the public line implies. No name has been confirmed by a primary source, but the timing, with Romero's exit edging closer, is unlikely to be coincidental."
-  },
-  {
-    date:"3 Aug",
-    text:"Word filtering out of pre-season is that the Osimhen approach is more real than the 'shock' framing suggests. De Zerbi is said to be personally driving the push for a world-class striker — the 'bomba' language at recent press conferences wasn't decorative. Whether the finances stack up after a record-breaking summer is the question nobody is answering directly, but the name is apparently being spoken openly enough inside Hotspur Way that staff have stopped treating it as a fantasy."
-  },
-  {
-    date:"3 Aug",
-    text:"The Mikey Moore situation is moving faster than Spurs might like. An official bid has reportedly landed from at least one club, with the Bundesliga understood to be leading the race for the teenager. The loan-versus-permanent question hasn't been settled internally — but the sense is that if the right development opportunity arrives, Spurs won't stand in his way this summer."
   },
 ];
