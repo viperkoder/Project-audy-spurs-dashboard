@@ -269,7 +269,9 @@ If nothing meaningfully changed, return hasChanges: false and empty arrays (newW
     },
     body: JSON.stringify({
       model: 'claude-sonnet-4-6',
-      max_tokens: 2000,
+      max_tokens: 4096, // bumped from 2000 (2026-08-10) — busy news days (41+ headlines)
+                         // were truncating the JSON response mid-string, causing
+                         // "Unterminated string in JSON" and a full run failure
       messages: [{ role: 'user', content: prompt }],
     }),
   });
@@ -280,7 +282,14 @@ If nothing meaningfully changed, return hasChanges: false and empty arrays (newW
   const data = await res.json();
   const text = data.content.map(b => b.text || '').join('');
   const cleaned = text.replace(/```json|```/g, '').trim();
-  const parsed = JSON.parse(cleaned);
+  let parsed;
+  try {
+    parsed = JSON.parse(cleaned);
+  } catch (parseErr) {
+    console.error('\n❌ JSON parse failed. Raw Claude response (last 500 chars):');
+    console.error(cleaned.slice(-500));
+    throw parseErr;
+  }
 
   // Defensive defaults — never let a missing field crash downstream logic
   return {
