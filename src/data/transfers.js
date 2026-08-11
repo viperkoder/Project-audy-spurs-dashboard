@@ -113,6 +113,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"11 Aug",
+    text:"Word from inside Hotspur Way is that the Romero situation has moved faster than the club's public posture suggests — Atlético's talks aren't exploratory anymore, and sources close to the player indicate his camp are no longer waiting for a bid to materialise before making their preference clear. The Arsenal name keeps surfacing in the background, and for the first time this summer, it's not being laughed off."
+  },
+  {
+    date:"11 Aug",
+    text:"There's a quiet buzz around the Ashley Phillips situation — a 'concerning' medical issue has reportedly delayed what looked like a straightforward £20m deal, and nobody at the club is willing to say on the record how serious it is. The working assumption is that it gets resolved, but the fact it's surfaced at all has introduced a nervousness that wasn't there a week ago."
+  },
+  {
     date:"9 Aug",
     text:"Word drifting in from the Atletico talks is that Romero's camp are not just entertaining the conversation — they're driving it. BBC Sport's confirmation that Atletico held direct talks is being read inside N17 as a sign the player's preference for Spain is hardening into something more formal. Arsenal's name keeps surfacing in the background, which nobody at the club wants to say out loud, but it's no longer being dismissed the way it was a fortnight ago."
   },
@@ -127,13 +135,5 @@ export const ANON_BRIEFS = [
   {
     date:"8 Aug",
     text:"Ferran Torres has apparently been telling people he's open to a new challenge, and the name in the background is Spurs. Nothing formal has been lodged, and Torres himself has been careful with his words publicly — but the admission about his future hasn't gone unnoticed at Hotspur Way. Whether De Zerbi sees him as the profile he actually wants up front is the question being quietly asked."
-  },
-  {
-    date:"4 Aug",
-    text:"Word filtering through from today's reporting is that the Victor Osimhen approach is more than a throwaway line — football.london's 'shock' framing may actually undersell how seriously De Zerbi is pushing this internally. The 'bomba' language at press conferences has been consistent enough that people inside the building are no longer treating a world-class striker as a fantasy. Whether Spurs can engineer the finances after the most expensive summer in the club's history remains the question nobody wants to answer out loud."
-  },
-  {
-    date:"4 Aug",
-    text:"Spurs have reportedly reached out to a £43m-rated Italian defender to gauge his contract demands, per football.london — a quiet piece of business that suggests the Romero departure planning is further along than the public line implies. No name has been confirmed by a primary source, but the timing, with Romero's exit edging closer, is unlikely to be coincidental."
   },
 ];
