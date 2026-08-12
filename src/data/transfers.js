@@ -113,6 +113,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"12 Aug",
+    text:"Word filtering through from those close to the Kane camp is that Spurs' reported 'surprise enquiry' about a reunion is being taken more seriously than the club's public silence implies — not a formal bid, not even close, but the fact the conversation was opened at all is being treated as meaningful by those around the player. Whether that translates into anything before the window closes is another matter entirely."
+  },
+  {
+    date:"12 Aug",
+    text:"There's quiet movement on the striker front that the club hasn't acknowledged publicly — the 'final stages' language appearing in football.london around an unnamed transfer is understood to relate to a forward addition, with two details still unresolved. Sources suggest De Zerbi has signed off on the profile and the hold-up is structural rather than personal."
+  },
+  {
     date:"11 Aug",
     text:"Word from inside Hotspur Way is that the Romero situation has moved faster than the club's public posture suggests — Atlético's talks aren't exploratory anymore, and sources close to the player indicate his camp are no longer waiting for a bid to materialise before making their preference clear. The Arsenal name keeps surfacing in the background, and for the first time this summer, it's not being laughed off."
   },
@@ -127,13 +135,5 @@ export const ANON_BRIEFS = [
   {
     date:"9 Aug",
     text:"The Van de Ven contract noise has shifted in tone — sources close to the situation suggest this is no longer a negotiation but a formality waiting on paperwork. BBC Sport's 'close to agreeing' language is being treated inside the building as closer to done than the careful wording implies, with De Zerbi's direct involvement credited as the moment talks accelerated."
-  },
-  {
-    date:"8 Aug",
-    text:"Word out of pre-season is that the Van de Ven contract situation moved quickly once De Zerbi got involved directly — sources close to the player suggest the manager's personal pitch was the turning point after weeks of stalled talks. The deal isn't signed yet, but the feeling inside the camp is that it's a formality now rather than a negotiation."
-  },
-  {
-    date:"8 Aug",
-    text:"Ferran Torres has apparently been telling people he's open to a new challenge, and the name in the background is Spurs. Nothing formal has been lodged, and Torres himself has been careful with his words publicly — but the admission about his future hasn't gone unnoticed at Hotspur Way. Whether De Zerbi sees him as the profile he actually wants up front is the question being quietly asked."
   },
 ];
