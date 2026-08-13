@@ -113,6 +113,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"13 Aug",
+    text:"There's quiet intrigue around Tottenham's striker search — the 'bombshell' language appearing in football.london's live blog around Osimhen, combined with chatter about a Balogun bid being readied, suggests the club may be pursuing parallel options rather than committing to one name. Word is De Zerbi has signed off on a profile, and the hold-up is commercial rather than personal — but nobody inside the building is saying which name is actually closer."
+  },
+  {
+    date:"13 Aug",
+    text:"The Gakpo question refuses to go away. Spurs fans were told to expect a 'contrasting update' on Savinho and Gakpo — confident on one, cooler on the other — and the framing in today's reporting suggests Liverpool's asking price remains the obstacle on Gakpo rather than any lack of genuine interest. Whether Spurs circle back once the Romero funds clear is the conversation happening quietly around N17 this week."
+  },
+  {
     date:"12 Aug",
     text:"Word filtering through from those close to the Kane camp is that Spurs' reported 'surprise enquiry' about a reunion is being taken more seriously than the club's public silence implies — not a formal bid, not even close, but the fact the conversation was opened at all is being treated as meaningful by those around the player. Whether that translates into anything before the window closes is another matter entirely."
   },
@@ -127,13 +135,5 @@ export const ANON_BRIEFS = [
   {
     date:"11 Aug",
     text:"There's a quiet buzz around the Ashley Phillips situation — a 'concerning' medical issue has reportedly delayed what looked like a straightforward £20m deal, and nobody at the club is willing to say on the record how serious it is. The working assumption is that it gets resolved, but the fact it's surfaced at all has introduced a nervousness that wasn't there a week ago."
-  },
-  {
-    date:"9 Aug",
-    text:"Word drifting in from the Atletico talks is that Romero's camp are not just entertaining the conversation — they're driving it. BBC Sport's confirmation that Atletico held direct talks is being read inside N17 as a sign the player's preference for Spain is hardening into something more formal. Arsenal's name keeps surfacing in the background, which nobody at the club wants to say out loud, but it's no longer being dismissed the way it was a fortnight ago."
-  },
-  {
-    date:"9 Aug",
-    text:"The Van de Ven contract noise has shifted in tone — sources close to the situation suggest this is no longer a negotiation but a formality waiting on paperwork. BBC Sport's 'close to agreeing' language is being treated inside the building as closer to done than the careful wording implies, with De Zerbi's direct involvement credited as the moment talks accelerated."
   },
 ];

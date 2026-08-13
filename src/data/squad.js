@@ -26,7 +26,6 @@ export const SQUAD = [
   {name:"JP van Hecke",   pos:"CB",e:"🇳🇱",apps:0, g:0,con:"2031",  wc:"NED",  st:"NEW — €52m 5YR",       sc:"cyan"},
   {name:"M. Senesi",      pos:"CB",e:"🇦🇷",apps:0, g:0,con:"2030",  wc:null,   st:"NEW — FREE",           sc:"cyan"},
   {name:"M. van de Ven",  pos:"CB",e:"🇳🇱",apps:28,g:1,con:"2029",  wc:"NED",  st:"CORE",                 sc:"green"},
-  {name:"C. Romero",      pos:"CB",e:"🇦🇷",apps:21,g:1,con:"2029",  wc:"ARG",  st:"SALE LINED UP — €50m ASK", sc:"amber"},
   {name:"K. Danso",       pos:"CB",e:"🇦🇹",apps:24,g:0,con:"2030",  wc:"AUT",  st:"CORE",                 sc:"green"},
   {name:"R. Dragusin",    pos:"CB",e:"🇷🇴",apps:18,g:0,con:"2030",  wc:null,   st:"BACKUP",               sc:"muted"},
   {name:"K. Takai",       pos:"CB",e:"🇯🇵",apps:0, g:0,con:"2029",  wc:null,   st:"BACK FROM GLADBACH LOAN — DEPTH",sc:"muted"},
@@ -60,7 +59,7 @@ export const SQUAD = [
 export const INJURIES = [
   {name:"Xavi Simons",     flag:"NL",emoji:"🇳🇱",pos:"AM",issue:"ACL right knee",        sev:"long",  ret:"20 Feb 2027"},
   {name:"Wilson Odobert",  flag:"FR",emoji:"🇫🇷",pos:"LW",issue:"ACL left knee",          sev:"long",  ret:"28 Nov 2026"},
-  {name:"Dejan Kulusevski",flag:"SE",emoji:"🇸🇪",pos:"RW",issue:"Knee (patella/cartilage) — De Zerbi publicly states he is 'fit and right' per BBC Sport. No competitive return date confirmed, but manager's direct public confirmation of fitness warrants removal from active injury list or at minimum a status downgrade to 'monitoring.' Squad status updated to 'MONITORING' pending competitive minutes.",          sev:"long",ret:"TARGETING 2026/27 SEASON — De Zerbi confirms 'fit and right' (BBC Sport)"},
+  {name:"Dejan Kulusevski",flag:"SE",emoji:"🇸🇪",pos:"RW",issue:"BBC Sport quotes De Zerbi saying Kulusevski is 'fit and right' for Spurs — this is a named primary-source confirmation of fitness from the manager. Recommend removing from active INJURIES list entirely (or archiving as resolved) and updating squad status to reflect available/monitoring rather than injured.",          sev:"long",ret:"Available now per De Zerbi (BBC Sport)"},
   // NOTE: Kudus REMOVED from active injuries 17 Jul 2026 — back in full pre-season
   // training, targeting the Aug 22 opener at Brentford. See squad.js SQUAD entry.
 ];
