@@ -54,6 +54,9 @@ jobs:
       - name: Run daily update
         run: node automation/update-dashboard.js
 
+      - name: Rebuild GitHub Pages site
+        run: npm run build
+
       - name: Remove API key file before anything is committed
         if: always()
         run: rm -f automation/.env
@@ -62,7 +65,7 @@ jobs:
         run: |
           git config user.name "thfc-dashboard-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add src/data/transfers.js src/data/squad.js src/data/news.js dist/ automation/update-log.txt
+          git add src/data/transfers.js src/data/squad.js src/data/news.js src/data/fixtures.js docs/ automation/update-log.txt
           if git diff --cached --quiet; then
             echo "No changes today — nothing to commit."
           else

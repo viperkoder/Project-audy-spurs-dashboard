@@ -30,11 +30,12 @@ jobs:
 
       - name: Verify build output
         run: |
-          test -f dist/index.html || (echo "dist/index.html missing" && exit 1)
-          test -f dist/manifest.json || (echo "dist/manifest.json missing" && exit 1)
-          test -f dist/sw.js || (echo "dist/sw.js missing" && exit 1)
-          SIZE=$(stat -c%s dist/index.html)
+          test -f docs/index.html || (echo "docs/index.html missing" && exit 1)
+          test -f docs/bundle.js || (echo "docs/bundle.js missing" && exit 1)
+          test -f docs/manifest.json || (echo "docs/manifest.json missing" && exit 1)
+          test -f docs/sw.js || (echo "docs/sw.js missing" && exit 1)
+          SIZE=$(stat -c%s docs/index.html)
           if [ "$SIZE" -lt 20000 ]; then
-            echo "dist/index.html suspiciously small ($SIZE bytes)"; exit 1
+            echo "docs/index.html suspiciously small ($SIZE bytes)"; exit 1
           fi
           echo "Build output verified OK ($SIZE bytes)"

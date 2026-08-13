@@ -15,11 +15,11 @@
 // date first; worth a quick glance at update-log.txt on those weeks.
 
 export const PRESEASON = [
-  {opponent:"MK Dons",          venue:"N", date:"2026-07-22T15:00:00", score:null, note:"Behind closed doors — Hotspur Way (kickoff TBC)"},
-  {opponent:"Auckland FC",      venue:"A", date:"2026-07-26T04:30:00", score:null, note:"Auckland, New Zealand"},
-  {opponent:"Sydney FC",        venue:"N", date:"2026-07-29T10:45:00", score:null, note:"Sydney, Australia"},
-  {opponent:"Chelsea",          venue:"N", date:"2026-08-01T10:45:00", score:null, note:"Sydney Super Cup — Sydney, Australia"},
-  {opponent:"Getafe",           venue:"N", date:"2026-08-08T15:00:00", score:null, note:"Behind closed doors — Hotspur Way"},
+  {opponent:"MK Dons",          venue:"N", date:"2026-07-22T15:00:00", score:"1-0", note:"Behind closed doors — Hotspur Way"},
+  {opponent:"Auckland FC",      venue:"A", date:"2026-07-26T04:30:00", score:"2-0", note:"Auckland, New Zealand"},
+  {opponent:"Sydney FC",        venue:"N", date:"2026-07-29T10:45:00", score:"1-1 (4-2 pens)", note:"Sydney, Australia"},
+  {opponent:"Chelsea",          venue:"N", date:"2026-08-01T10:45:00", score:"2-1", note:"Sydney Super Cup — Sydney, Australia"},
+  {opponent:"Getafe",           venue:"N", date:"2026-08-08T15:00:00", score:"1-1", note:"Behind closed doors — Hotspur Way (70 minutes)"},
   {opponent:"Hoffenheim",       venue:"H", date:"2026-08-15T15:00:00", score:null, note:"Tottenham Hotspur Stadium"},
   {opponent:"Hoffenheim",       venue:"N", date:"2026-08-16T15:00:00", score:null, note:"Behind closed doors — Training Centre"},
 ];
