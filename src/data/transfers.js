@@ -13,7 +13,7 @@ export const TRANSFER_BRIEFS = [
   // other attacking options that better fit budget/tactics. (Yahoo Sports,
   // 9 Aug) Re-add only if fresh reporting revives it.
   {
-    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:72, st:"hot", date:"9 Aug",
+    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:74, st:"hot", date:"9 Aug",
     brief:"Still Spurs' top winger target and personal terms remain agreed, but this has NOT accelerated to done — if anything it's cooled slightly from the 'nearly administrative' framing a week ago. Romano (5-9 Aug): clubs are 'still pretty far apart on price,' with Tottenham targeting ~£60m and City yet to formally sign off. No formal bid has been submitted. New complication: AC Milan have proposed a rival loan-with-obligation-to-buy structure worth £43-47m, which could appeal to City if they'd rather offload for a lower guaranteed fee than hold out for £60m permanent. City also reportedly want a replacement winger lined up before sanctioning a sale. Tottenham have signalled they're willing to walk if talks keep dragging — read as leverage, not a genuine cooling of interest. Likelihood trimmed from 88% to reflect the stalled price gap and Milan's new competition, not a change in Spurs' intent."
   },
   {
@@ -37,7 +37,7 @@ export const TRANSFER_BRIEFS = [
   // 25 Jun, stalled behind the Leao/Savinho race at 8% likelihood. Re-add if
   // new reporting surfaces rather than leaving a stale entry on the dashboard.
   {
-    player:"Victor Osimhen", e:"🇳🇬", from:"Galatasaray", fee:"55m", like:38, st:"warm", date:"9 Aug",
+    player:"Victor Osimhen", e:"🇳🇬", from:"Galatasaray", fee:"55m", like:40, st:"warm", date:"9 Aug",
     brief:"Promoted from anonymous-only chatter (see ANON_BRIEFS 3-4 Aug) to a proper brief — this has now graduated to multiple named outlets reporting a formal approach. Tottenham have proposed £50-55m; Galatasaray want £65m, a £10-15m gap that's the main obstacle. Reports (Caught Offside, citing agent-industry sources; thehardtackle) say Spurs have 'received sporting approval to begin formal negotiations' and personal terms aren't expected to be a hurdle. Would be a 7th major signing after an already record summer (£230m+ spent on 6 arrivals), which is the real question mark — not the player's willingness, but whether the finances stack up. Also being weighed alongside continued interest in Cody Gakpo."
   },
   {
@@ -93,6 +93,7 @@ export const CONFIRMED = [
 // contract (reported Oct 2025) — he was never a confirmed departure.
 // Earlier data appears to have misread a renewal story as an expiry.
 export const DEPARTURES = [
+  {player:"D. Spence", note:"CONFIRMED departure imminent — ESPN reports Spence has landed in Italy to complete Inter transfer; Guardian reports Inter in talks over £25.6m move; BBC Sport reports Inter in advanced talks for Spurs full-back Spence; CaughtOffside video of Spurs star arriving in major European city. Multiple primary sources (ESPN, Guardian, BBC) confirm this is effectively done. Fee approximately £25m-£25.6m per Guardian. Remove the previous note restoring him and move to confirmed departure."},
   {player:"Mikey Moore", note:"NEW 9 Aug — promoted from ANON_BRIEFS now that it's Romano-attributed. FC Köln have submitted an official bid for a season-long loan; Romano (exclusive, 2 Aug): 'negotiations at advanced stages with #THFC as deal could be completed next week with Moore open to the move.' Several other European clubs have shown interest but Köln are the clear frontrunners. Loan only, not a permanent exit."},
   {player:"C. Melia", note:"Lincoln City sign Spurs goalkeeper Melia on loan — confirmed per BBC Sport. Loan departure, no fee."},
   {player:"Manor Solomon", note:"talkSPORT (primary) reports Tottenham are open to selling Manor Solomon to a Championship club. Player has not featured for Spurs in three years per The Sun (primary). No specific club or fee confirmed yet — departure appears likely but not formally agreed."},
@@ -113,6 +114,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"14 Aug",
+    text:"Word around N17 is that the Bergvall situation has taken on a new edge — Man City entering 'advanced talks' (per football.london) has changed the calculus for the club, and the quiet assumption that Forest would simply come back with a better offer and get their man is no longer the only scenario being planned for. Whether Spurs hold the line on valuation or blink first when a bigger club is circling is the question people inside the building are now asking."
+  },
+  {
+    date:"14 Aug",
+    text:"The Barcelona contact over a 'shock deal' for a 26-year-old Tottenham superstar is being treated as exactly that — a shock — internally. No names are being attached with any confidence, but the framing suggests it's not a fringe player, and the fact it's surfaced at all on a week when Spurs are already managing multiple exits has people at Hotspur Way quietly hoping it stays speculative."
+  },
+  {
     date:"13 Aug",
     text:"There's quiet intrigue around Tottenham's striker search — the 'bombshell' language appearing in football.london's live blog around Osimhen, combined with chatter about a Balogun bid being readied, suggests the club may be pursuing parallel options rather than committing to one name. Word is De Zerbi has signed off on a profile, and the hold-up is commercial rather than personal — but nobody inside the building is saying which name is actually closer."
   },
@@ -127,13 +136,5 @@ export const ANON_BRIEFS = [
   {
     date:"12 Aug",
     text:"There's quiet movement on the striker front that the club hasn't acknowledged publicly — the 'final stages' language appearing in football.london around an unnamed transfer is understood to relate to a forward addition, with two details still unresolved. Sources suggest De Zerbi has signed off on the profile and the hold-up is structural rather than personal."
-  },
-  {
-    date:"11 Aug",
-    text:"Word from inside Hotspur Way is that the Romero situation has moved faster than the club's public posture suggests — Atlético's talks aren't exploratory anymore, and sources close to the player indicate his camp are no longer waiting for a bid to materialise before making their preference clear. The Arsenal name keeps surfacing in the background, and for the first time this summer, it's not being laughed off."
-  },
-  {
-    date:"11 Aug",
-    text:"There's a quiet buzz around the Ashley Phillips situation — a 'concerning' medical issue has reportedly delayed what looked like a straightforward £20m deal, and nobody at the club is willing to say on the record how serious it is. The working assumption is that it gets resolved, but the fact it's surfaced at all has introduced a nervousness that wasn't there a week ago."
   },
 ];

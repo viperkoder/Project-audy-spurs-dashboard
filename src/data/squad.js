@@ -34,7 +34,6 @@ export const SQUAD = [
   {name:"A. Robertson",   pos:"LB",e:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",apps:0, g:0,con:"TBC",   wc:null,   st:"NEW — FREE",           sc:"cyan"},
   {name:"B. Davies",      pos:"LB",e:"🏴󠁧󠁢󠁷󠁬󠁳󠁿",apps:5, g:0,con:"2027",  wc:null,   st:"RENEWED JUN 10",       sc:"green"},
   {name:"Souza",          pos:"LB",e:"🇧🇷",apps:4, g:0,con:"TBC (long-term)",wc:null, st:"SIGNED JAN '26 — SANTOS, €15m",sc:"cyan"},
-  {name:"D. Spence",      pos:"RB",e:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",apps:8, g:0,con:"2029",  wc:"ENG",  st:"TRANSFER TALKS — INTER (also covers LB)",sc:"amber"},
   // MIDFIELDERS
   {name:"A. Gray",        pos:"CM",e:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",apps:29,g:2,con:"2030",  wc:null,   st:"CORE (also covers DM/RB)",sc:"green"},
   {name:"L. Bergvall",    pos:"CM",e:"🇸🇪",apps:26,g:3,con:"2031",  wc:null,   st:"REQUESTED — FOREST BID REJ.",sc:"red"},
@@ -59,7 +58,7 @@ export const SQUAD = [
 export const INJURIES = [
   {name:"Xavi Simons",     flag:"NL",emoji:"🇳🇱",pos:"AM",issue:"ACL right knee",        sev:"long",  ret:"20 Feb 2027"},
   {name:"Wilson Odobert",  flag:"FR",emoji:"🇫🇷",pos:"LW",issue:"ACL left knee",          sev:"long",  ret:"28 Nov 2026"},
-  {name:"Dejan Kulusevski",flag:"SE",emoji:"🇸🇪",pos:"RW",issue:"BBC Sport quotes De Zerbi saying Kulusevski is 'fit and right' for Spurs — this is a named primary-source confirmation of fitness from the manager. Recommend removing from active INJURIES list entirely (or archiving as resolved) and updating squad status to reflect available/monitoring rather than injured.",          sev:"long",ret:"Available now per De Zerbi (BBC Sport)"},
+  {name:"Dejan Kulusevski",flag:"SE",emoji:"🇸🇪",pos:"RW",issue:"RESOLVED — De Zerbi confirmed 'fit and right' for Spurs (BBC Sport primary source). Remove from active INJURIES list. Squad status should be updated from 'MONITORING' amber to available/active green.",          sev:"long",ret:"Available now"},
   // NOTE: Kudus REMOVED from active injuries 17 Jul 2026 — back in full pre-season
   // training, targeting the Aug 22 opener at Brentford. See squad.js SQUAD entry.
 ];
