@@ -114,6 +114,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"15 Aug",
+    text:"Word filtering through the corridors at Hotspur Way is that the Gakpo question has quietly refused to die — the 'analysis' framing from named outlets asking whether he'd be a good fit reads less like idle punditry and more like a trial balloon. Whether the Romero funds landing clears the path for a formal approach is the conversation happening behind the scenes this week."
+  },
+  {
+    date:"15 Aug",
+    text:"There's a murmur doing the rounds that Roma's reported 'major roadblock' in their £23m pursuit of a Tottenham starter — and a Saudi club circling a £30m Spurs midfielder — could quietly accelerate the club's own planning around squad depth. Neither situation is being treated as urgent internally, but the combination of Romero, Spence and Solomon exits in quick succession has people at N17 watching the outgoings board very carefully."
+  },
+  {
     date:"14 Aug",
     text:"Word around N17 is that the Bergvall situation has taken on a new edge — Man City entering 'advanced talks' (per football.london) has changed the calculus for the club, and the quiet assumption that Forest would simply come back with a better offer and get their man is no longer the only scenario being planned for. Whether Spurs hold the line on valuation or blink first when a bigger club is circling is the question people inside the building are now asking."
   },
@@ -128,13 +136,5 @@ export const ANON_BRIEFS = [
   {
     date:"13 Aug",
     text:"The Gakpo question refuses to go away. Spurs fans were told to expect a 'contrasting update' on Savinho and Gakpo — confident on one, cooler on the other — and the framing in today's reporting suggests Liverpool's asking price remains the obstacle on Gakpo rather than any lack of genuine interest. Whether Spurs circle back once the Romero funds clear is the conversation happening quietly around N17 this week."
-  },
-  {
-    date:"12 Aug",
-    text:"Word filtering through from those close to the Kane camp is that Spurs' reported 'surprise enquiry' about a reunion is being taken more seriously than the club's public silence implies — not a formal bid, not even close, but the fact the conversation was opened at all is being treated as meaningful by those around the player. Whether that translates into anything before the window closes is another matter entirely."
-  },
-  {
-    date:"12 Aug",
-    text:"There's quiet movement on the striker front that the club hasn't acknowledged publicly — the 'final stages' language appearing in football.london around an unnamed transfer is understood to relate to a forward addition, with two details still unresolved. Sources suggest De Zerbi has signed off on the profile and the hold-up is structural rather than personal."
   },
 ];

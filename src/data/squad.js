@@ -58,7 +58,7 @@ export const SQUAD = [
 export const INJURIES = [
   {name:"Xavi Simons",     flag:"NL",emoji:"🇳🇱",pos:"AM",issue:"ACL right knee",        sev:"long",  ret:"20 Feb 2027"},
   {name:"Wilson Odobert",  flag:"FR",emoji:"🇫🇷",pos:"LW",issue:"ACL left knee",          sev:"long",  ret:"28 Nov 2026"},
-  {name:"Dejan Kulusevski",flag:"SE",emoji:"🇸🇪",pos:"RW",issue:"RESOLVED — De Zerbi confirmed 'fit and right' for Spurs (BBC Sport primary source). Remove from active INJURIES list. Squad status should be updated from 'MONITORING' amber to available/active green.",          sev:"long",ret:"Available now"},
+  {name:"Dejan Kulusevski",flag:"SE",emoji:"🇸🇪",pos:"RW",issue:"RESOLVED — De Zerbi quoted by BBC Sport as saying Kulusevski is 'fit and right' for Spurs. Remove from active INJURIES list. Squad status should move from amber 'MONITORING' to green 'AVAILABLE' or equivalent.",          sev:"long",ret:"Available now"},
   // NOTE: Kudus REMOVED from active injuries 17 Jul 2026 — back in full pre-season
   // training, targeting the Aug 22 opener at Brentford. See squad.js SQUAD entry.
 ];
