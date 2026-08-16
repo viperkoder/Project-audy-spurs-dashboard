@@ -23,6 +23,8 @@ export function TransfersPanel(){
   // Sorted by confidence (%) descending, highest first — recompute here so
   // TRANSFER_BRIEFS in transfers.js can stay in whatever order you add to it.
   const sortedBriefs=[...TRANSFER_BRIEFS].sort((a,b)=>b.like-a.like);
+  const departureStatus=note=>/COMPLETED|SOLD|Released|Sale to .* agreed|Loan ended/i.test(note)?"CONFIRMED":/confirmed per|confirmed by/i.test(note)?"CONFIRMED":"LIVE";
+  const departureType=note=>/loan/i.test(note)?"LOAN":/released|contract expired/i.test(note)?"RELEASED":/interest|bid|sell|sale|permanent|SOLD|COMPLETED/i.test(note)?"PERMANENT":"DEPARTURE";
   return (
     <div className="fade-in" style={{display:"flex",flexDirection:"column",gap:18}}>
       <div>
@@ -48,11 +50,15 @@ export function TransfersPanel(){
       </div>
       <div>
         <WH lg>Departures</WH>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(200px,1fr))",gap:6}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(230px,1fr))",gap:8}}>
           {DEPARTURES.map((d,i)=>(
-            <div key={i} style={{padding:"10px 12px",background:P.bgCard,borderRadius:5,border:`1px solid ${P.border}`,borderLeft:`3px solid ${P.red}`,display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-              <span style={{fontSize:13,fontWeight:700,color:P.white}}>{d.player}</span>
-              <span style={{fontSize:11,color:P.red}}>{d.note}</span>
+            <div key={i} style={{padding:"14px 16px",background:P.bgCard,borderRadius:6,border:`1px solid ${P.red}44`,borderLeft:`3px solid ${P.red}`}}>
+              <div style={{fontSize:15,fontWeight:800,color:P.white}}>{d.player}</div>
+              <div style={{fontSize:11,color:P.muted,lineHeight:1.55,marginTop:6}}>{d.note}</div>
+              <div style={{display:"flex",gap:6,marginTop:10,flexWrap:"wrap"}}>
+                <Chip label={departureType(d.note)} color={P.red}/>
+                <Chip label={departureStatus(d.note)} color={departureStatus(d.note)==="CONFIRMED"?P.green:P.amber}/>
+              </div>
             </div>
           ))}
         </div>
