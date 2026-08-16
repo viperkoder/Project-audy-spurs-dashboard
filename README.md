@@ -15,7 +15,10 @@
 - **Secret scanner.** `npm run check-secrets` (also runs automatically before every build) scans the whole project for exposed API keys and refuses to build if it finds one anywhere outside `automation/.env`.
 - **CI smoke check.** `.github/workflows/build-check.yml` builds and sanity-checks the output on every push.
 
-⚠️ **One-time setup change**: this version requires `npm install` once (to pull in esbuild as a dev dependency). After that, the daily workflow is unchanged: edit → `node build.js` → upload `dist/`.
+⚠️ **One-time setup change**: this version requires `npm install` once (to pull in esbuild as a dev dependency). After that: edit source → `npm run build` → commit the generated `docs/` output.
+
+Before any data refresh or season rollover, follow the canonical
+[`docs/dashboard-maintenance-checklist.md`](docs/dashboard-maintenance-checklist.md).
 
 ## What goes where
 
@@ -56,7 +59,7 @@ spurs-modular/
 ├── package.json             ← esbuild dev dependency + npm scripts
 ├── .github/workflows/
 │   └── build-check.yml      ← CI: builds + sanity-checks on every push
-├── dist/                    ← Generated — upload these 3 files to GitHub Pages
+├── docs/                    ← Generated — served directly by GitHub Pages
 │   ├── index.html
 │   ├── manifest.json
 │   └── sw.js
@@ -74,8 +77,8 @@ node build.js
 
 1. Open the relevant file in `src/` (see table above)
 2. Make your edit
-3. Run: `node build.js`
-4. Upload the updated `dist/index.html`, `dist/manifest.json` and `dist/sw.js` to GitHub
+3. Run: `npm run build`
+4. Commit the updated `docs/` files to `main`
 
 ## Common edits
 
@@ -96,16 +99,17 @@ node build.js
 
 ## Deploying to GitHub Pages
 
-Upload the contents of `dist/` to your GitHub repo root:
-- `dist/index.html`
-- `dist/manifest.json`
-- `dist/sw.js`
+GitHub Pages serves the `docs/` directory from `main`. Commit:
+- `docs/index.html`
+- `docs/bundle.js`
+- `docs/manifest.json`
+- `docs/sw.js`
 
-All three are needed — `index.html` alone will still work, but PWA install/offline support needs the other two.
+Keep all four tracked files together — `index.html` alone can render, but the bundle and PWA files are required for the complete deployed app.
 
 ## Running in Electron (desktop app)
 
-Point `main.js` at `dist/index.html`. All three `dist/` files must be in the same folder.
+Point `main.js` at `docs/index.html`. Keep the tracked `docs/` deployment files in the same folder.
 
 ## Security — before you zip or share this project
 
@@ -123,7 +127,10 @@ If you ever *do* expose a real key by accident: revoke it immediately at console
 
 - **News**: Fetched live from Google News RSS on load, cached in localStorage for 24hrs.
   Change `NEWS_CACHE_TTL` in `src/data/news.js` to adjust.
-- **Everything else**: Updated by editing the relevant `src/data/*.js` file and rebuilding.
+- **Daily automation**: News, whispers, transfer changes, selected squad/injury
+  changes, fixture-score detection and the Pages rebuild.
+- **Manual reconciliation**: League table, scorer/appearance totals, finances,
+  cup draws and season rollover. Follow the canonical maintenance checklist.
 
 ---
 AUDERE EST FACERE · THFC 1882 · COYS

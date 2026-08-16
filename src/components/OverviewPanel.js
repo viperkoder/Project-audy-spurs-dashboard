@@ -24,7 +24,7 @@ export function OverviewPanel({liveNews}){
   const spurs = STANDINGS.find(r=>r.isSpurs);
   const leagueAvgGF = STANDINGS.reduce((s,r)=>s+r.gf,0)/STANDINGS.length;
   const leagueAvgGA = STANDINGS.reduce((s,r)=>s+r.ga,0)/STANDINGS.length;
-  const played = spurs ? spurs.w+spurs.d+spurs.l : 38;
+  const played = spurs ? spurs.w+spurs.d+spurs.l : 0;
   const topScorerGA = Math.max(...SCORERS.map(s=>s.g+s.a), 1);
   // Same live-fetched, already-filtered source the News Centre tab uses —
   // fetched once in App.js and passed down, so this always agrees with the
@@ -79,7 +79,7 @@ export function OverviewPanel({liveNews}){
 
       {/* STATS ROW — moved down, now sits directly above Season Analysis */}
       <div style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:8}}>
-        {[["P","38",P.white],["W","10",P.green],["D","11",P.amber],["L","17",P.red],["GF","48",P.white],["GA","57",P.muted],["PTS","41",P.gold]].map(([l,v,c])=>(
+        {[["P",played,P.white],["W",spurs?.w||0,P.green],["D",spurs?.d||0,P.amber],["L",spurs?.l||0,P.red],["GF",spurs?.gf||0,P.white],["GA",spurs?.ga||0,P.muted],["PTS",spurs?.pts||0,P.gold]].map(([l,v,c])=>(
           <div key={l} style={{textAlign:"center",padding:"12px 6px",background:P.bgCard,borderRadius:6,border:`1px solid ${P.border}`}}>
             <div style={{fontSize:26,fontWeight:900,color:c,lineHeight:1}}>{v}</div>
             <div style={{fontSize:11,color:P.muted,letterSpacing:"0.15em",marginTop:5,fontWeight:700}}>{l}</div>
@@ -90,7 +90,7 @@ export function OverviewPanel({liveNews}){
       <div>
         <WH lg>Season Analysis</WH>
         <div style={{display:"grid",gridTemplateColumns:"auto 1fr",gap:24,padding:"16px",background:P.bgCard,borderRadius:6,border:`1px solid ${P.border}`,alignItems:"center"}}>
-          {spurs && (
+          {spurs && played>0 ? (
             <RadialGauge
               label="RESULTS"
               segments={[
@@ -99,12 +99,14 @@ export function OverviewPanel({liveNews}){
                 {name:"L",value:spurs.l,color:P.red},
               ]}
             />
-          )}
+          ) : <div style={{width:120,textAlign:"center",color:P.muted,fontSize:12,lineHeight:1.6}}>Analysis begins after Matchday 1.</div>}
           <div>
             <CompareBar label="Goals Scored (season)" teamValue={spurs?spurs.gf:0} avgValue={leagueAvgGF} color={P.green}/>
             <CompareBar label="Goals Conceded (season)" teamValue={spurs?spurs.ga:0} avgValue={leagueAvgGA} color={P.red}/>
             <div style={{fontSize:11,color:P.muted,lineHeight:1.6,marginTop:8,paddingTop:10,borderTop:`1px solid ${P.border}`}}>
-              {spurs && spurs.ga>leagueAvgGA && spurs.gf>=leagueAvgGF*0.9
+              {played===0
+                ? <><strong style={{color:P.amber}}>Pre-season:</strong> Competitive analysis will populate automatically once league results are entered.</>
+                : spurs && spurs.ga>leagueAvgGA && spurs.gf>=leagueAvgGF*0.9
                 ? <><strong style={{color:P.amber}}>Read:</strong> Attack was roughly league-average, but the defence conceded {(spurs.ga-leagueAvgGA).toFixed(1)} more goals than a typical side — the table position is a defensive problem more than an attacking one.</>
                 : <><strong style={{color:P.amber}}>Read:</strong> Comparing output to the {played}-game league average shows where the points actually went missing.</>}
             </div>
@@ -113,7 +115,7 @@ export function OverviewPanel({liveNews}){
       </div>
 
       <div>
-        <WH lg>2025/26 Premier League — Final Table</WH>
+        <WH lg>2026/27 Premier League — Pre-Season Table</WH>
         <div style={{overflowX:"auto"}}>
           <table style={{width:"100%",borderCollapse:"collapse",fontSize:13}}>
             <thead><tr style={{color:P.muted,fontSize:10,letterSpacing:"0.12em"}}>
@@ -123,12 +125,12 @@ export function OverviewPanel({liveNews}){
             </tr></thead>
             <tbody>
               {STANDINGS.map((row,i)=>{
-                const ucl=row.pos<=5,uel=row.pos===6||row.pos===7,uecl=row.pos===8;
+                const ucl=played>0&&row.pos<=5,uel=played>0&&(row.pos===6||row.pos===7),uecl=played>0&&row.pos===8;
                 return (
                   <tr key={i} style={{background:row.isSpurs?P.gold+"14":row.rel?P.red+"08":i%2?P.bgCard:"transparent",borderLeft:`3px solid ${row.isSpurs?P.gold:row.rel?P.red:"transparent"}`}}>
                     <td style={{textAlign:"center",padding:"6px",fontWeight:800,fontSize:13,color:ucl?P.green:uel?P.amber:uecl?P.cyan:row.rel?P.red:P.muted}}>{row.pos}</td>
                     <td style={{padding:"6px",fontWeight:row.isSpurs?900:500,fontSize:13,color:row.isSpurs?P.gold:row.rel?"#FF7788":P.text}}>{row.isSpurs?"⚡ ":""}{row.team}</td>
-                    <td style={{textAlign:"center",padding:"6px",color:P.muted}}>38</td>
+                    <td style={{textAlign:"center",padding:"6px",color:P.muted}}>{row.w+row.d+row.l}</td>
                     {[row.w,row.d,row.l,row.gf,row.ga].map((v,j)=><td key={j} style={{textAlign:"center",padding:"6px",color:P.muted}}>{v}</td>)}
                     <td style={{textAlign:"center",padding:"6px",fontWeight:700,color:row.gd>0?P.green:row.gd<0?P.red:P.muted}}>{row.gd>0?"+"+row.gd:row.gd}</td>
                     <td style={{textAlign:"center",padding:"6px",fontWeight:900,fontSize:14,color:row.isSpurs?P.gold:P.white}}>{row.pts}</td>
@@ -143,16 +145,13 @@ export function OverviewPanel({liveNews}){
           </table>
         </div>
         <div style={{display:"flex",flexWrap:"wrap",gap:12,marginTop:10,fontSize:11,color:P.muted}}>
-          <span><span style={{color:P.green}}>■</span> UCL Top 5</span>
-          <span><span style={{color:P.amber}}>■</span> Europa</span>
-          <span><span style={{color:P.cyan}}>■</span> Conference</span>
-          <span><span style={{color:P.red}}>■</span> Relegated</span>
+          <span>All clubs start level; alphabetical order until Matchday 1.</span>
           <span><span style={{color:P.gold}}>■</span> Tottenham</span>
         </div>
       </div>
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:18}}>
         <div>
-          <WH lg>Last 5 Results</WH>
+          <WH lg>Pre-Season Form — Last 5</WH>
           <div style={{display:"flex",flexDirection:"column",gap:6}}>
             {LAST5.map((r,i)=>{
               const c=r.r==="W"?P.green:r.r==="D"?P.amber:P.red;
@@ -170,8 +169,9 @@ export function OverviewPanel({liveNews}){
           </div>
         </div>
         <div>
-          <WH lg>Top Scorers 2025/26</WH>
+          <WH lg>Top Scorers 2026/27</WH>
           <div style={{display:"flex",flexDirection:"column",gap:6}}>
+            {SCORERS.length===0 && <div style={{padding:"18px",background:P.bgCard,borderRadius:6,border:`1px solid ${P.border}`,color:P.muted,fontSize:12}}>Competitive scorer totals begin after Matchday 1.</div>}
             {SCORERS.map((p,i)=>(
               <div key={i} style={{display:"flex",alignItems:"center",gap:10,padding:"9px 12px",background:P.bgCard,borderRadius:5,border:`1px solid ${P.border}`}}>
                 <div style={{width:26,height:26,borderRadius:4,background:i===0?P.gold:i===1?"#C0C0C0":i===2?"#CD7F32":P.dim,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:900,color:i<3?P.bg:P.muted,flexShrink:0}}>{i+1}</div>

@@ -2,7 +2,7 @@
 // CONFIRMED SPURS PLAYERS AT WC (12): Romero (ARG), Senesi (ARG), Van de Ven (NED),
 //   Van Hecke (NED), Danso (AUT), Porro (ESP), Spence (ENG), Bentancur (URU),
 //   Sarr (SEN), Bergvall (SWE), Vuskovic (CRO), Robertson (SCO)
-// Last verified: 17 Jul 2026. Stat fields (xi/sub/bench/rtg) left as "—" where not
+// Archived after the final on 19 Jul 2026. Stat fields (xi/sub/bench/rtg) left as "—" where not
 // independently confirmed match-by-match — status/progress/results are the verified data.
 // FINAL: Argentina vs Spain — Sun 19 Jul, MetLife Stadium NJ, 3pm ET. Romero vs Porro.
 // 3rd place: France vs England — Sat 18 Jul, Hard Rock Stadium, Miami.
@@ -10,31 +10,31 @@
 export const WC = [
   {
     name:"C. Romero", e:"🇦🇷", pos:"CB", country:"Argentina", group:"J",
-    results:["W 3-0 Algeria","W 2-0 Austria","W 3-1 Jordan","W 3-2 Cape Verde","W 3-2 Egypt (R16)","W 3-1 Switzerland (aet, QF)","W 2-1 England (SF)"],
-    gp:7, goals:1, ast:0, rtg:"—",
-    progress:"FINAL — Sun 19 Jul vs Spain (MetLife Stadium)", out:false,
-    note:"Scored the equalising header (79') as Argentina fought back from 2-0 down to beat Egypt in the R16 — his first senior international goal at a World Cup. Argentina are in the Final chasing back-to-back titles, facing Spurs teammate Pedro Porro's Spain."
+    results:["W 3-0 Algeria","W 2-0 Austria","W 3-1 Jordan","W 3-2 Cape Verde","W 3-2 Egypt (R16)","W 3-1 Switzerland (aet, QF)","W 2-1 England (SF)","L 0-1 Spain (aet, Final)"],
+    gp:8, goals:1, ast:0, rtg:"—",
+    progress:"RUNNERS-UP — lost 0-1 aet to Spain", out:true,
+    note:"Scored against Egypt in the R16 and helped Argentina reach the final. Spain won 1-0 after extra time."
   },
   {
     name:"M. Senesi", e:"🇦🇷", pos:"CB", country:"Argentina", group:"J",
-    results:["W 3-0 Algeria","W 2-0 Austria","W 3-1 Jordan","W 3-2 Cape Verde","W 3-2 Egypt (R16)","W 3-1 Switzerland (aet, QF)","W 2-1 England (SF)"],
-    gp:7, goals:0, ast:0, rtg:"—",
-    progress:"FINAL — Sun 19 Jul vs Spain (MetLife Stadium)", out:false,
-    note:"Part of Argentina's squad throughout their run to the Final."
+    results:["W 3-0 Algeria","W 2-0 Austria","W 3-1 Jordan","W 3-2 Cape Verde","W 3-2 Egypt (R16)","W 3-1 Switzerland (aet, QF)","W 2-1 England (SF)","L 0-1 Spain (aet, Final)"],
+    gp:8, goals:0, ast:0, rtg:"—",
+    progress:"RUNNERS-UP — lost 0-1 aet to Spain", out:true,
+    note:"Part of Argentina's squad throughout their run to the final."
   },
   {
     name:"P. Porro", e:"🇪🇸", pos:"RB", country:"Spain", group:"H",
-    results:["D 0-0 Cape Verde","W 4-0 Saudi Arabia","W 1-0 Uruguay","W 3-0 Austria","W 1-0 Portugal (R16)","W 2-1 Belgium (QF)","W 2-0 France (SF)"],
-    gp:7, goals:0, ast:0, rtg:"—",
-    progress:"FINAL — Sun 19 Jul vs Argentina (MetLife Stadium)", out:false,
-    note:"Spain beat Ronaldo's Portugal (Merino, 90+'), then Belgium and then France 2-0 in the semi to reach the Final without conceding to a top side since the group stage. Faces Spurs teammate Cristian Romero for the trophy."
+    results:["D 0-0 Cape Verde","W 4-0 Saudi Arabia","W 1-0 Uruguay","W 3-0 Austria","W 1-0 Portugal (R16)","W 2-1 Belgium (QF)","W 2-0 France (SF)","W 1-0 Argentina (aet, Final)"],
+    gp:8, goals:0, ast:1, rtg:"—",
+    progress:"WORLD CHAMPION — Spain beat Argentina 1-0 aet", out:true,
+    note:"World champion. Porro's extra-time cross created the winning goal scored by Ferran Torres."
   },
   {
     name:"D. Spence", e:"🏴󠁧󠁢󠁥󠁮󠁧󠁿", pos:"RB", country:"England", group:"L",
-    results:["W 4-2 Croatia","D 0-0 Ghana","W 2-0 Panama","W 2-1 DR Congo","W 3-2 Mexico (R16)","W 2-1 Norway (aet, QF)","L 1-2 Argentina (SF)"],
-    gp:7, goals:0, ast:0, rtg:"—",
-    progress:"ELIMINATED — SF vs Argentina (lost 1-2)", out:true,
-    note:"England's run ended in the semi-final against Argentina (15 Jul), who they now meet again in Romero's case at club level next season. England play France in the third-place match, Sat 18 Jul (Miami). Spence was England's only Spurs representative at the tournament."
+    results:["W 4-2 Croatia","D 0-0 Ghana","W 2-0 Panama","W 2-1 DR Congo","W 3-2 Mexico (R16)","W 2-1 Norway (aet, QF)","L 1-2 Argentina (SF)","W 6-4 France (3rd place)"],
+    gp:8, goals:0, ast:0, rtg:"—",
+    progress:"THIRD PLACE — England beat France 6-4", out:true,
+    note:"England recovered from their semi-final defeat to take bronze in a record ten-goal third-place match."
   },
   {
     name:"M. van de Ven", e:"🇳🇱", pos:"CB", country:"Netherlands", group:"F",

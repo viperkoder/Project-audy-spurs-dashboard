@@ -33,9 +33,10 @@ export const TRANSFER_BRIEFS = [
   // NOTE: Maghnes Akliouche REMOVED 9 Aug 2026 — confirmed gone to PSG,
   // "Here We Go" (Fabrizio Romano). Matches this brief's own prior read
   // that PSG were firmly leading the race.
-  // NOTE: Cody Gakpo REMOVED 17 Jul 2026 — dead lead, no fresh reporting since
-  // 25 Jun, stalled behind the Leao/Savinho race at 8% likelihood. Re-add if
-  // new reporting surfaces rather than leaving a stale entry on the dashboard.
+  {
+    player:"Cody Gakpo", e:"🇳🇱", from:"Liverpool", fee:"60m+", like:52, st:"warm", date:"16 Aug",
+    brief:"Reactivated after fresh Dutch and German reporting. Tottenham have opened concrete discussions and Gakpo is reportedly receptive, but Liverpool have not approved a sale and reports of a completed agreement are disputed. Treat as a live negotiation, not a done deal; Liverpool's replacement plans may determine whether it advances."
+  },
   {
     player:"Victor Osimhen", e:"🇳🇬", from:"Galatasaray", fee:"55m", like:40, st:"warm", date:"9 Aug",
     brief:"Promoted from anonymous-only chatter (see ANON_BRIEFS 3-4 Aug) to a proper brief — this has now graduated to multiple named outlets reporting a formal approach. Tottenham have proposed £50-55m; Galatasaray want £65m, a £10-15m gap that's the main obstacle. Reports (Caught Offside, citing agent-industry sources; thehardtackle) say Spurs have 'received sporting approval to begin formal negotiations' and personal terms aren't expected to be a hurdle. Would be a 7th major signing after an already record summer (£230m+ spent on 6 arrivals), which is the real question mark — not the player's willingness, but whether the finances stack up. Also being weighed alongside continued interest in Cody Gakpo."
@@ -78,29 +79,20 @@ export const CONFIRMED = [
   },
 ];
 
-// NOTE: D. Spence REMOVED from Departures 31 Jul 2026 — De Zerbi's stance
-// reversed after Spence's strong World Cup form (vs Norway and Argentina).
-// Manager now wants him to stay: "I would like you to stay if you want to
-// stay. If you don't want to stay, if you want to leave, then you have to
-// leave." Liverpool and Everton interest remains credited but no advanced
-// talks reported with any club. Framed as the player's own choice now, not
-// an expected exit. (Sources: football365, caughtoffside, fotmob,
-// sportingpedia — 30 Jul 2026)
-//
 // NOTE: R. Bentancur REMOVED 31 Jul 2026 — was incorrectly listed as a
 // free departure ("contract expired"). Verified against Transfermarkt +
 // multiple outlets: Tottenham actually tied him to a NEW long-term
 // contract (reported Oct 2025) — he was never a confirmed departure.
 // Earlier data appears to have misread a renewal story as an expiry.
 export const DEPARTURES = [
-  {player:"D. Spence", note:"CONFIRMED departure imminent — ESPN reports Spence has landed in Italy to complete Inter transfer; Guardian reports Inter in talks over £25.6m move; BBC Sport reports Inter in advanced talks for Spurs full-back Spence; CaughtOffside video of Spurs star arriving in major European city. Multiple primary sources (ESPN, Guardian, BBC) confirm this is effectively done. Fee approximately £25m-£25.6m per Guardian. Remove the previous note restoring him and move to confirmed departure."},
+  {player:"D. Spence", note:"COMPLETED 15 Aug — permanent transfer to Inter Milan. Reported fee approximately £30m; contract to 2031. Confirmed by Inter, BBC, Sky, ESPN and Reuters."},
   {player:"Mikey Moore", note:"NEW 9 Aug — promoted from ANON_BRIEFS now that it's Romano-attributed. FC Köln have submitted an official bid for a season-long loan; Romano (exclusive, 2 Aug): 'negotiations at advanced stages with #THFC as deal could be completed next week with Moore open to the move.' Several other European clubs have shown interest but Köln are the clear frontrunners. Loan only, not a permanent exit."},
   {player:"C. Melia", note:"Lincoln City sign Spurs goalkeeper Melia on loan — confirmed per BBC Sport. Loan departure, no fee."},
-  {player:"Manor Solomon", note:"talkSPORT (primary) reports Tottenham are open to selling Manor Solomon to a Championship club. Player has not featured for Spurs in three years per The Sun (primary). No specific club or fee confirmed yet — departure appears likely but not formally agreed."},
+  {player:"Manor Solomon", note:"COMPLETED — permanent transfer to West Ham. Reported initial fee £5m, potentially £7m with add-ons, plus a 10% sell-on clause."},
   {player:"N. Lankshear", note:"Middlesbrough sign Tottenham striker Lankshear — confirmed per BBC Sport. Permanent departure; no fee reported in headline."},
   {player:"M. Akhamrich", note:"Tottenham winger Akhamrich joins Leyton Orient on loan — confirmed per BBC Sport. Loan move, no fee."},
   {player:"G. Vicario", note:"Juventus CEO Giovanni Carnevali has confirmed direct interest; Spalletti has spoken to Vicario personally. Spurs have set a €15m asking price (negotiable). Complication: Vicario wants ~€4m/yr after tax, above Juve's wage discipline, and Juve's actual first choice is Aston Villa's Emi Martínez (who Villa won't sell) — Vicario is the fallback. A loan-with-option is being discussed as a compromise. Drags into August."},
-  {player:"C. Romero", note:"Expected to leave this summer per multiple mid-July reports. Spurs have set a €50m (~£42-43m) asking price. Romero's own preference is a return to Spain with Barcelona, though no formal bid is in yet. Inter Milan explored a move (raised while discussing Djed Spence) but see a fee near €60m as too rich. Atlético Madrid also mentioned. No bid lodged as of 17 Jul, but Spurs look increasingly resigned to selling before the window shuts. UPDATE 31 Jul (Twitter Pulse): De Zerbi confirmed on record to Alasdair Gold (Newsworthy source) that Romero wants to leave — the first direct managerial confirmation of the exit. Anonymous chatter separately adds Atlético Madrid actively negotiating alongside Inter, though no Spanish package is expected to beat Inter's current terms."},
+  {player:"C. Romero", note:"COMPLETED — permanent transfer to Atlético Madrid for a reported £34m, with Spurs retaining a 15% sell-on clause. Four-year contract plus an optional year."},
   {player:"P. Sarr", note:"NEW 31 Jul (Twitter Pulse, anonymous-sourced only — no Newsworthy corroboration yet, treat as early-stage): Aston Villa preparing a bid, described as holding 'serious interest.' Personal terms reportedly not expected to be an issue. A German club is also credited with interest."},
   {player:"L. Bergvall", note:"Handed in a transfer request citing lack of first-team football (112 mins under De Zerbi all season). Nottingham Forest had an opening £38m bid rejected and are expected to return with an improved offer — the chance to work under Oliver Glasner is reportedly a big pull for the player. Spurs are willing to sell but only on their valuation; will keep him if it isn't met."},
   {player:"Richarlison", note:"Spurs are ready to sell with a year left on his deal, partly to manage Profit & Sustainability Rules headroom after the Fernandes/Tonali spend. Asking price reported between €20-30m. Juventus have joined the race as a fallback if their move for PSG's Kolo Muani fails; an unnamed Turkish club and Orlando City (MLS) have also been mentioned, Everton links have gone cold."},

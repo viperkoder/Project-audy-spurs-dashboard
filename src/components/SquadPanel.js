@@ -19,10 +19,9 @@ export function SquadPanel({onSelect}){
           <button key={pos} onClick={()=>setFilter(pos)} style={{background:filter===pos?P.gold:P.bgCard,color:filter===pos?P.bg:P.muted,border:`1px solid ${filter===pos?P.gold:P.border}`,borderRadius:4,padding:"5px 12px",fontSize:11,fontWeight:700,cursor:"pointer",letterSpacing:"0.1em",transition:"all 0.15s"}}>{pos}</button>
         ))}
       </div>
-      <WH lg>First Team Squad 2025/26 — {filtered.length} Players</WH>
+      <WH lg>First Team Squad 2026/27 — {filtered.length} Players</WH>
       <div style={{padding:"10px 14px",background:P.bgCard,borderRadius:5,borderLeft:`3px solid ${P.gold}`,fontSize:12,color:P.muted,lineHeight:1.8}}>
-        <strong style={{color:P.gold}}>De Zerbi:</strong> "We have 10-11-12 players good enough. We must complete the squad with first-level players."
-        <strong style={{color:P.red}}> Gone:</strong> Bissouma (released), Veliz (sold 7.7m), Kolo Muani (loan). Palhinha and Bentancur expire Jun 30.
+        <strong style={{color:P.gold}}>Season reset:</strong> Competitive appearances and goals are zeroed. Romero, Spence and Solomon departures are reflected; transfer-window movement remains live.
       </div>
       <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(210px,1fr))",gap:8}}>
         {filtered.map((p,i)=>(

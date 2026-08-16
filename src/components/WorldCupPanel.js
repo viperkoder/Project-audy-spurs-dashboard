@@ -49,9 +49,9 @@ export function WorldCupPanel(){
 
   return (
     <div className="fade-in" style={{display:"flex",flexDirection:"column",gap:16}}>
-      <WH lg>2026 FIFA World Cup — Spurs Players</WH>
+      <WH lg>2026 FIFA World Cup — Archived</WH>
       <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8}}>
-        {[[active.length,"STILL IN",P.green],[out.length,"ELIMINATED",P.red],[WC.reduce((a,p)=>a+p.goals,0),"TOTAL GOALS",P.gold],[WC.reduce((a,p)=>a+p.ast,0),"TOTAL ASSISTS",P.cyan]].map(([v,l,c],i)=>(
+        {[[WC.length,"TRACKED PLAYERS",P.green],[out.length,"TOURNAMENT COMPLETE",P.red],[WC.reduce((a,p)=>a+p.goals,0),"TOTAL GOALS",P.gold],[WC.reduce((a,p)=>a+p.ast,0),"TOTAL ASSISTS",P.cyan]].map(([v,l,c],i)=>(
           <div key={i} style={{padding:"14px",background:P.bgCard,borderRadius:6,border:`1px solid ${P.border}`,borderTop:`3px solid ${c}`,textAlign:"center"}}>
             <div style={{fontSize:34,fontWeight:900,color:c,lineHeight:1}}>{v}</div>
             <div style={{fontSize:11,color:P.muted,fontWeight:700,letterSpacing:"0.12em",marginTop:5}}>{l}</div>
@@ -61,22 +61,22 @@ export function WorldCupPanel(){
       <div style={{padding:"8px 14px",background:P.bgCard,borderRadius:5,border:`1px solid ${P.borderGold}`,fontSize:11,color:P.muted,lineHeight:1.7}}>
         <span style={{color:P.gold,fontWeight:800}}>COLUMN GUIDE:</span> GP = Games Played · XI = Started First Eleven · SUB = Came on as substitute · BENCH = Unused sub · GOALS · ASST = Assists · RTG = Avg match rating (Sofascore-style 1-10)
       </div>
-      <div>
+      {active.length>0 && <div>
         <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12}}>
           <div style={{width:10,height:10,borderRadius:"50%",background:P.green}}/>
-          <span style={{fontSize:15,fontWeight:900,color:P.green,letterSpacing:"0.12em"}}>STILL IN TOURNAMENT ({active.length})</span>
+          <span style={{fontSize:15,fontWeight:900,color:P.green,letterSpacing:"0.12em"}}>ACTIVE PLAYERS ({active.length})</span>
         </div>
         {active.map((p,i)=>Card(p,i))}
-      </div>
+      </div>}
       <div>
         <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12}}>
           <div style={{width:10,height:10,borderRadius:"50%",background:P.red}}/>
-          <span style={{fontSize:15,fontWeight:900,color:P.red,letterSpacing:"0.12em"}}>ELIMINATED ({out.length})</span>
+          <span style={{fontSize:15,fontWeight:900,color:P.red,letterSpacing:"0.12em"}}>FINAL TOURNAMENT STATUS ({out.length})</span>
         </div>
         {out.map((p,i)=>Card(p,active.length+i))}
       </div>
       <div style={{padding:"10px 14px",background:P.bgCard,borderRadius:5,border:`1px solid ${P.borderGold}`,fontSize:11,color:P.muted,lineHeight:1.7}}>
-        <span style={{color:P.gold,fontWeight:800}}>DATA:</span> Group stage complete 27 Jun 2026. Stats from ESPN, Wikipedia, FourFourTwo and FOXSports. Ratings estimated from match reports. <span style={{color:P.amber}}>Round of 32 started Jun 28 — update data as results come in.</span>
+        <span style={{color:P.gold,fontWeight:800}}>ARCHIVED:</span> Tournament completed 19 Jul 2026. Spain beat Argentina 1-0 after extra time; England beat France 6-4 for third place.
       </div>
     </div>
   );

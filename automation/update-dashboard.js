@@ -17,7 +17,7 @@
  *   5. ALWAYS refreshes the News tab's fallback headlines in src/data/news.js with
  *      today's real headlines — this is what the browser shows if live RSS fetch
  *      fails, so it's never more than a day stale even in the worst case
- *   6. Rebuilds dist/index.html automatically (bundle inlined, single deployable file)
+ *   6. Rebuilds the tracked docs/ deployment output automatically
  *   7. Writes a plain-English changelog to automation/update-log.txt
  *
  * What it does NOT do:
@@ -647,13 +647,13 @@ function syncSquadWithTransfers(analysis) {
     console.log('\n' + logLines.join('\n'));
 
     if (changed) {
-      console.log('Rebuilding dist/index.html...');
+      console.log('Rebuilding docs/ deployment output...');
       // Use the same node binary running this script (process.execPath)
       // instead of relying on `node` being in PATH — launchd gives child
       // shells a minimal PATH that doesn't include /usr/local/bin, which is
       // why "node: command not found" was failing every run previously.
       execSync(`"${process.execPath}" build.js`, { cwd: ROOT, stdio: 'inherit' });
-      console.log('\n✅ Dashboard updated — dist/index.html rebuilt with bundle inlined automatically. Review automation/update-log.txt, then re-upload dist/index.html to GitHub.');
+      console.log('\n✅ Dashboard updated — docs/ deployment output rebuilt automatically. Review automation/update-log.txt, then commit the tracked docs/ files to GitHub.');
     } else {
       console.log('\n✅ No changes needed today. Dashboard already up to date.');
     }

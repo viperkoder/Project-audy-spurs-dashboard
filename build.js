@@ -4,12 +4,12 @@
 //
 // Reads all source files from data/, lib/, components/, concatenates and
 // JSX-compiles + minifies them via esbuild, then INLINES that bundle
-// directly into dist/index.html using src/index-template.html as the shell.
-// Also copies manifest.json and sw.js into dist/ for PWA support.
+// directly into docs/index.html using src/index-template.html as the shell.
+// Also copies manifest.json and sw.js into docs/ for PWA support.
 //
-// dist/index.html + dist/manifest.json + dist/sw.js are what you upload to
-// GitHub Pages (or load in Electron). dist/bundle.js is written for
-// reference/debugging only — nothing loads it at runtime.
+// docs/index.html + docs/bundle.js + docs/manifest.json + docs/sw.js are what you deploy to
+// GitHub Pages (or load in Electron). docs/bundle.js is retained as the
+// compiled artifact alongside the self-contained HTML shell.
 //
 // CHANGE FROM v1: JSX used to be shipped raw and parsed live in the browser
 // by Babel Standalone (~1.5MB library, parsed on every page load). Now it's
@@ -193,4 +193,4 @@ const minKB = Math.round(Buffer.byteLength(minified) / 1024);
 console.log(`\n✓ Build passed smoke checks.`);
 console.log(`  docs/index.html   ${Math.round(finalHtml.length / 1024)}KB total (bundle: ${rawKB}KB source -> ${minKB}KB minified)`);
 console.log(`  docs/manifest.json copied, docs/sw.js versioned (cache: thfc-dashboard-${buildVersion})`);
-console.log(`  Upload docs/index.html + docs/manifest.json + docs/sw.js to GitHub Pages (all three needed for PWA install).\n`);
+console.log(`  Commit the tracked docs/ output to main for GitHub Pages deployment.\n`);

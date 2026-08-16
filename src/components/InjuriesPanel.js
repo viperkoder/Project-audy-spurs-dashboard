@@ -12,7 +12,7 @@ export function InjuriesPanel(){
         <div style={{padding:"14px",background:P.bgCard,borderRadius:6,borderTop:`3px solid ${P.amber}`,textAlign:"center"}}><div style={{fontSize:34,fontWeight:900,color:P.amber}}>{INJURIES.filter(x=>x.sev==="medium").length}</div><div style={{fontSize:11,color:P.muted,fontWeight:700,letterSpacing:"0.12em",marginTop:4}}>MEDIUM-TERM</div></div>
         <div style={{padding:"14px",background:P.bgCard,borderRadius:6,borderTop:`3px solid ${P.green}`,textAlign:"center"}}><div style={{fontSize:13,fontWeight:800,color:P.green,marginTop:4}}>premierinjuries.com</div><div style={{fontSize:11,color:P.muted,fontWeight:700,letterSpacing:"0.12em",marginTop:4}}>VERIFIED SOURCE</div></div>
       </div>
-      <WH lg>Current Injury List — Verified 22 Jun 2026</WH>
+      <WH lg>Current Injury List — Verified 16 Aug 2026</WH>
       <div style={{display:"flex",flexDirection:"column",gap:8}}>
         {INJURIES.map((inj,i)=>(
           <div key={i} style={{padding:"14px 16px",background:P.injuryBg,borderRadius:6,border:`1px solid ${P.injuryBorder}55`,borderLeft:`4px solid ${inj.sev==="long"?P.red:P.amber}`}}>

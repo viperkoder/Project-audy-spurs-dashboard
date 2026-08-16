@@ -16,11 +16,11 @@ Every day at 7:00 AM, a script on your Mac:
 2. Sends fresh headlines + your current transfers/squad data to Claude
 3. Claude identifies ONLY confirmed, verifiable changes — conservative by design
 4. Updates `src/data/transfers.js` and `src/data/squad.js` automatically
-5. Rebuilds `dist/bundle.js`
+5. Rebuilds the tracked `docs/` deployment output
 6. Writes `automation/update-log.txt` — a plain-English summary for you to check
 
 **It does NOT** auto-upload to GitHub. You still control what goes live —
-just drag the new `dist/bundle.js` up when you're happy with it.
+review the changes, then commit the rebuilt `docs/` files when you're happy with them.
 
 **It does NOT** touch `news.js` — the News tab already fetches RSS live
 every time you open the dashboard, no automation needed there.
@@ -128,7 +128,7 @@ This shows you:
 - Anything flagged as "not confident enough to auto-apply" for you to check manually
 
 If changes were applied, review the data files, then upload the new
-`dist/bundle.js` + `dist/index.html` to GitHub as usual.
+Commit the rebuilt `docs/` deployment files to GitHub as usual.
 
 ---
 
