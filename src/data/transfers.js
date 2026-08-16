@@ -114,6 +114,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"16 Aug",
+    text:"Word around N17 is that the Gakpo pursuit has moved well beyond the 'analysis' stage — De Zerbi has apparently spoken to the player directly, and the language around an 'agreement in principle' is being treated inside the building as more than negotiating posture. Whether Liverpool actually let him go before the window shuts is the only question that matters now, and that answer is expected this week."
+  },
+  {
+    date:"16 Aug",
+    text:"The 'source in Nigeria' framing on a blockbuster striker deal is raising eyebrows in the right places — the Osimhen camp has form for using domestic Nigerian media to signal genuine intent rather than idle flattery. Spurs' striker situation, with Solanke still managing his hamstring and Richarlison's exit looking inevitable, means De Zerbi may not have the luxury of playing a long game on this one."
+  },
+  {
     date:"15 Aug",
     text:"Word filtering through the corridors at Hotspur Way is that the Gakpo question has quietly refused to die — the 'analysis' framing from named outlets asking whether he'd be a good fit reads less like idle punditry and more like a trial balloon. Whether the Romero funds landing clears the path for a formal approach is the conversation happening behind the scenes this week."
   },
@@ -128,13 +136,5 @@ export const ANON_BRIEFS = [
   {
     date:"14 Aug",
     text:"The Barcelona contact over a 'shock deal' for a 26-year-old Tottenham superstar is being treated as exactly that — a shock — internally. No names are being attached with any confidence, but the framing suggests it's not a fringe player, and the fact it's surfaced at all on a week when Spurs are already managing multiple exits has people at Hotspur Way quietly hoping it stays speculative."
-  },
-  {
-    date:"13 Aug",
-    text:"There's quiet intrigue around Tottenham's striker search — the 'bombshell' language appearing in football.london's live blog around Osimhen, combined with chatter about a Balogun bid being readied, suggests the club may be pursuing parallel options rather than committing to one name. Word is De Zerbi has signed off on a profile, and the hold-up is commercial rather than personal — but nobody inside the building is saying which name is actually closer."
-  },
-  {
-    date:"13 Aug",
-    text:"The Gakpo question refuses to go away. Spurs fans were told to expect a 'contrasting update' on Savinho and Gakpo — confident on one, cooler on the other — and the framing in today's reporting suggests Liverpool's asking price remains the obstacle on Gakpo rather than any lack of genuine interest. Whether Spurs circle back once the Romero funds clear is the conversation happening quietly around N17 this week."
   },
 ];
