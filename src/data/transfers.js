@@ -13,7 +13,7 @@ export const TRANSFER_BRIEFS = [
   // other attacking options that better fit budget/tactics. (Yahoo Sports,
   // 9 Aug) Re-add only if fresh reporting revives it.
   {
-    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:74, st:"hot", date:"9 Aug",
+    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:76, st:"hot", date:"9 Aug",
     brief:"Still Spurs' top winger target and personal terms remain agreed, but this has NOT accelerated to done — if anything it's cooled slightly from the 'nearly administrative' framing a week ago. Romano (5-9 Aug): clubs are 'still pretty far apart on price,' with Tottenham targeting ~£60m and City yet to formally sign off. No formal bid has been submitted. New complication: AC Milan have proposed a rival loan-with-obligation-to-buy structure worth £43-47m, which could appeal to City if they'd rather offload for a lower guaranteed fee than hold out for £60m permanent. City also reportedly want a replacement winger lined up before sanctioning a sale. Tottenham have signalled they're willing to walk if talks keep dragging — read as leverage, not a genuine cooling of interest. Likelihood trimmed from 88% to reflect the stalled price gap and Milan's new competition, not a change in Spurs' intent."
   },
   {
@@ -38,7 +38,7 @@ export const TRANSFER_BRIEFS = [
     brief:"Reactivated after fresh Dutch and German reporting. Tottenham have opened concrete discussions and Gakpo is reportedly receptive, but Liverpool have not approved a sale and reports of a completed agreement are disputed. Treat as a live negotiation, not a done deal; Liverpool's replacement plans may determine whether it advances."
   },
   {
-    player:"Victor Osimhen", e:"🇳🇬", from:"Galatasaray", fee:"55m", like:40, st:"warm", date:"9 Aug",
+    player:"Victor Osimhen", e:"🇳🇬", from:"Galatasaray", fee:"55m", like:38, st:"warm", date:"9 Aug",
     brief:"Promoted from anonymous-only chatter (see ANON_BRIEFS 3-4 Aug) to a proper brief — this has now graduated to multiple named outlets reporting a formal approach. Tottenham have proposed £50-55m; Galatasaray want £65m, a £10-15m gap that's the main obstacle. Reports (Caught Offside, citing agent-industry sources; thehardtackle) say Spurs have 'received sporting approval to begin formal negotiations' and personal terms aren't expected to be a hurdle. Would be a 7th major signing after an already record summer (£230m+ spent on 6 arrivals), which is the real question mark — not the player's willingness, but whether the finances stack up. Also being weighed alongside continued interest in Cody Gakpo."
   },
   {
@@ -106,6 +106,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"17 Aug",
+    text:"Word around N17 is that the Vicario situation has quietly shifted gear — Inside Futbol's framing of a deal that 'accelerates quickly' and could be 'closed tomorrow' is being taken more seriously than the slow-burn Juventus loan talk of recent weeks suggested. Whether the fee and wage structure can actually be reconciled before the window shuts is the question Spurs' bean-counters are working through right now."
+  },
+  {
+    date:"17 Aug",
+    text:"The double-deal framing doing the rounds — 'terms agreed' and 'demands met' per Football365 — is vague enough to cover almost anything, but the timing, coming the same week Romero and Spence funds land, has people at Hotspur Way quietly connecting dots around the striker and winger positions De Zerbi has been most vocal about needing. Next week is being talked about internally as the window's defining stretch."
+  },
+  {
     date:"16 Aug",
     text:"Word around N17 is that the Gakpo pursuit has moved well beyond the 'analysis' stage — De Zerbi has apparently spoken to the player directly, and the language around an 'agreement in principle' is being treated inside the building as more than negotiating posture. Whether Liverpool actually let him go before the window shuts is the only question that matters now, and that answer is expected this week."
   },
@@ -120,13 +128,5 @@ export const ANON_BRIEFS = [
   {
     date:"15 Aug",
     text:"There's a murmur doing the rounds that Roma's reported 'major roadblock' in their £23m pursuit of a Tottenham starter — and a Saudi club circling a £30m Spurs midfielder — could quietly accelerate the club's own planning around squad depth. Neither situation is being treated as urgent internally, but the combination of Romero, Spence and Solomon exits in quick succession has people at N17 watching the outgoings board very carefully."
-  },
-  {
-    date:"14 Aug",
-    text:"Word around N17 is that the Bergvall situation has taken on a new edge — Man City entering 'advanced talks' (per football.london) has changed the calculus for the club, and the quiet assumption that Forest would simply come back with a better offer and get their man is no longer the only scenario being planned for. Whether Spurs hold the line on valuation or blink first when a bigger club is circling is the question people inside the building are now asking."
-  },
-  {
-    date:"14 Aug",
-    text:"The Barcelona contact over a 'shock deal' for a 26-year-old Tottenham superstar is being treated as exactly that — a shock — internally. No names are being attached with any confidence, but the framing suggests it's not a fringe player, and the fact it's surfaced at all on a week when Spurs are already managing multiple exits has people at Hotspur Way quietly hoping it stays speculative."
   },
 ];
