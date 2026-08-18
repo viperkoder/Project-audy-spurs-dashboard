@@ -13,10 +13,6 @@ export const TRANSFER_BRIEFS = [
   // other attacking options that better fit budget/tactics. (Yahoo Sports,
   // 9 Aug) Re-add only if fresh reporting revives it.
   {
-    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"60m", like:76, st:"hot", date:"9 Aug",
-    brief:"Still Spurs' top winger target and personal terms remain agreed, but this has NOT accelerated to done — if anything it's cooled slightly from the 'nearly administrative' framing a week ago. Romano (5-9 Aug): clubs are 'still pretty far apart on price,' with Tottenham targeting ~£60m and City yet to formally sign off. No formal bid has been submitted. New complication: AC Milan have proposed a rival loan-with-obligation-to-buy structure worth £43-47m, which could appeal to City if they'd rather offload for a lower guaranteed fee than hold out for £60m permanent. City also reportedly want a replacement winger lined up before sanctioning a sale. Tottenham have signalled they're willing to walk if talks keep dragging — read as leverage, not a genuine cooling of interest. Likelihood trimmed from 88% to reflect the stalled price gap and Milan's new competition, not a change in Spurs' intent."
-  },
-  {
     player:"Carlos Baleba", e:"🇨🇲", from:"Brighton", fee:"100m", like:32, st:"warm", date:"14 Jul (no update since)",
     brief:"One of three De Zerbi ex-Brighton targets (with Verbruggen; Van Hecke already signed). De Zerbi worked closely with Baleba at Brighton — 37 games together — and rates him highly. His valuation has climbed sharply since De Zerbi signed him for £23.3m in 2024, with reports now pricing him as high as £100m, which has cooled the pace of any move. Man Utd interest previously reported has gone quiet; Spurs could revisit if that move stays dead. Club acknowledges landing all three Brighton targets in one window is unlikely. STATUS CHECK 9 Aug: no fresh reporting found since mid-June — trimmed a few points to reflect the lead has genuinely gone quiet, not just under-covered. Not marked dead; revisit if reporting resumes."
   },
@@ -34,11 +30,11 @@ export const TRANSFER_BRIEFS = [
   // "Here We Go" (Fabrizio Romano). Matches this brief's own prior read
   // that PSG were firmly leading the race.
   {
-    player:"Cody Gakpo", e:"🇳🇱", from:"Liverpool", fee:"60m+", like:52, st:"warm", date:"16 Aug",
+    player:"Cody Gakpo", e:"🇳🇱", from:"Liverpool", fee:"60m+", like:58, st:"warm", date:"16 Aug",
     brief:"Reactivated after fresh Dutch and German reporting. Tottenham have opened concrete discussions and Gakpo is reportedly receptive, but Liverpool have not approved a sale and reports of a completed agreement are disputed. Treat as a live negotiation, not a done deal; Liverpool's replacement plans may determine whether it advances."
   },
   {
-    player:"Victor Osimhen", e:"🇳🇬", from:"Galatasaray", fee:"55m", like:38, st:"warm", date:"9 Aug",
+    player:"Victor Osimhen", e:"🇳🇬", from:"Galatasaray", fee:"55m", like:40, st:"warm", date:"9 Aug",
     brief:"Promoted from anonymous-only chatter (see ANON_BRIEFS 3-4 Aug) to a proper brief — this has now graduated to multiple named outlets reporting a formal approach. Tottenham have proposed £50-55m; Galatasaray want £65m, a £10-15m gap that's the main obstacle. Reports (Caught Offside, citing agent-industry sources; thehardtackle) say Spurs have 'received sporting approval to begin formal negotiations' and personal terms aren't expected to be a hurdle. Would be a 7th major signing after an already record summer (£230m+ spent on 6 arrivals), which is the real question mark — not the player's willingness, but whether the finances stack up. Also being weighed alongside continued interest in Cody Gakpo."
   },
   {
@@ -52,6 +48,10 @@ export const TRANSFER_BRIEFS = [
 ];
 
 export const CONFIRMED = [
+  {
+    player:"Savinho", e:"🏳️", from:"Man City", fee:"~£60m", role:"TBC", date:"2026-08-18",
+    note:"Fabrizio Romano 'here we go' confirmed per Football365 and Google News aggregation ('Romano gives here we go to next Tottenham transfer as offer is accepted'). Remove from TRANSFER_BRIEFS and add to CONFIRMED. Fee to be verified once official club announcement published. — auto-added, verify flag/role manually"
+  },
   {
     player:"Sandro Tonali", e:"🇮🇹", from:"Newcastle", fee:"100m", role:"DM", date:"2026-07-03",
     note:"Confirmed by BBC, Sky Sports, football.london and Romano. Initial fee £92.5m rising to £100m with add-ons. 6-year deal. De Zerbi connection central to move. Role confirmed as DM (his primary position at Milan/Newcastle)."
@@ -85,6 +85,7 @@ export const CONFIRMED = [
 // contract (reported Oct 2025) — he was never a confirmed departure.
 // Earlier data appears to have misread a renewal story as an expiry.
 export const DEPARTURES = [
+  {player:"M. van de Ven (contract update, not departure)", note:"NOT a departure — flagging here for squad.js update only. BBC Sport confirms Van de Ven has signed a new long-term deal. squad.js already shows con:2029 and 'CORE — NEW LONG-TERM DEAL' but the contract end date may need updating once full terms are published. The BBC headline 'Van de Ven signs new long-term deal' and the earlier 'close to agreeing' headline confirm this is done."},
   {player:"D. Spence", note:"COMPLETED 15 Aug — permanent transfer to Inter Milan. Reported fee approximately £30m; contract to 2031. Confirmed by Inter, BBC, Sky, ESPN and Reuters."},
   {player:"Mikey Moore", note:"NEW 9 Aug — promoted from ANON_BRIEFS now that it's Romano-attributed. FC Köln have submitted an official bid for a season-long loan; Romano (exclusive, 2 Aug): 'negotiations at advanced stages with #THFC as deal could be completed next week with Moore open to the move.' Several other European clubs have shown interest but Köln are the clear frontrunners. Loan only, not a permanent exit."},
   {player:"C. Melia", note:"Lincoln City sign Spurs goalkeeper Melia on loan — confirmed per BBC Sport. Loan departure, no fee."},
@@ -106,6 +107,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"18 Aug",
+    text:"Word doing the rounds at N17 is that Savinho's deal landing has not killed off the Gakpo pursuit — if anything, sources close to the situation suggest De Zerbi has been pushing hard for a second attacking addition before the window shuts, with the implication that Liverpool's price and their own replacement plans are the only remaining obstacles. The phrase 'several things need to happen' is being read inside the building as a checklist being quietly worked through, not a door closing."
+  },
+  {
+    date:"18 Aug",
+    text:"There's quiet chatter that the Richarlison situation is considerably more tangled than the clean 'ready to sell' narrative suggests — contract clauses, PSR calculations and the player's own reluctance to drop into a lesser league are all said to be complicating what looked like a straightforward exit. Everton's below-asking bid has apparently not been the only lowball offer to land on Daniel Levy's desk this week."
+  },
+  {
     date:"17 Aug",
     text:"Word around N17 is that the Vicario situation has quietly shifted gear — Inside Futbol's framing of a deal that 'accelerates quickly' and could be 'closed tomorrow' is being taken more seriously than the slow-burn Juventus loan talk of recent weeks suggested. Whether the fee and wage structure can actually be reconciled before the window shuts is the question Spurs' bean-counters are working through right now."
   },
@@ -120,13 +129,5 @@ export const ANON_BRIEFS = [
   {
     date:"16 Aug",
     text:"The 'source in Nigeria' framing on a blockbuster striker deal is raising eyebrows in the right places — the Osimhen camp has form for using domestic Nigerian media to signal genuine intent rather than idle flattery. Spurs' striker situation, with Solanke still managing his hamstring and Richarlison's exit looking inevitable, means De Zerbi may not have the luxury of playing a long game on this one."
-  },
-  {
-    date:"15 Aug",
-    text:"Word filtering through the corridors at Hotspur Way is that the Gakpo question has quietly refused to die — the 'analysis' framing from named outlets asking whether he'd be a good fit reads less like idle punditry and more like a trial balloon. Whether the Romero funds landing clears the path for a formal approach is the conversation happening behind the scenes this week."
-  },
-  {
-    date:"15 Aug",
-    text:"There's a murmur doing the rounds that Roma's reported 'major roadblock' in their £23m pursuit of a Tottenham starter — and a Saudi club circling a £30m Spurs midfielder — could quietly accelerate the club's own planning around squad depth. Neither situation is being treated as urgent internally, but the combination of Romero, Spence and Solomon exits in quick succession has people at N17 watching the outgoings board very carefully."
   },
 ];
