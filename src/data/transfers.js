@@ -30,11 +30,11 @@ export const TRANSFER_BRIEFS = [
   // "Here We Go" (Fabrizio Romano). Matches this brief's own prior read
   // that PSG were firmly leading the race.
   {
-    player:"Cody Gakpo", e:"🇳🇱", from:"Liverpool", fee:"60m+", like:58, st:"warm", date:"16 Aug",
+    player:"Cody Gakpo", e:"🇳🇱", from:"Liverpool", fee:"60m+", like:45, st:"warm", date:"16 Aug",
     brief:"Reactivated after fresh Dutch and German reporting. Tottenham have opened concrete discussions and Gakpo is reportedly receptive, but Liverpool have not approved a sale and reports of a completed agreement are disputed. Treat as a live negotiation, not a done deal; Liverpool's replacement plans may determine whether it advances."
   },
   {
-    player:"Victor Osimhen", e:"🇳🇬", from:"Galatasaray", fee:"55m", like:40, st:"warm", date:"9 Aug",
+    player:"Victor Osimhen", e:"🇳🇬", from:"Galatasaray", fee:"55m", like:38, st:"warm", date:"9 Aug",
     brief:"Promoted from anonymous-only chatter (see ANON_BRIEFS 3-4 Aug) to a proper brief — this has now graduated to multiple named outlets reporting a formal approach. Tottenham have proposed £50-55m; Galatasaray want £65m, a £10-15m gap that's the main obstacle. Reports (Caught Offside, citing agent-industry sources; thehardtackle) say Spurs have 'received sporting approval to begin formal negotiations' and personal terms aren't expected to be a hurdle. Would be a 7th major signing after an already record summer (£230m+ spent on 6 arrivals), which is the real question mark — not the player's willingness, but whether the finances stack up. Also being weighed alongside continued interest in Cody Gakpo."
   },
   {
@@ -107,6 +107,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"19 Aug",
+    text:"Word reaching N17 is that De Zerbi personally intervened to halt a loan move for one of his own players — with the player reportedly already at the airport before the manager pulled the plug. The identity isn't being confirmed by anyone with a name attached, but the SpursWeb framing of 'just before the player boarded a flight' has people inside the building reading it as a very deliberate message about squad depth heading into the season opener."
+  },
+  {
+    date:"19 Aug",
+    text:"There's quiet murmuring that Tottenham's striker pursuit may not be as straightforward as the Osimhen headlines suggest — a source described by Football365 as a 'Tottenham insider' has apparently been telling people the target in question isn't rated meaningfully above Richarlison, which raises the question of whether De Zerbi is fully aligned with the recruitment push or whether this one is being driven from above. The next 72 hours are being watched carefully."
+  },
+  {
     date:"18 Aug",
     text:"Word doing the rounds at N17 is that Savinho's deal landing has not killed off the Gakpo pursuit — if anything, sources close to the situation suggest De Zerbi has been pushing hard for a second attacking addition before the window shuts, with the implication that Liverpool's price and their own replacement plans are the only remaining obstacles. The phrase 'several things need to happen' is being read inside the building as a checklist being quietly worked through, not a door closing."
   },
@@ -121,13 +129,5 @@ export const ANON_BRIEFS = [
   {
     date:"17 Aug",
     text:"The double-deal framing doing the rounds — 'terms agreed' and 'demands met' per Football365 — is vague enough to cover almost anything, but the timing, coming the same week Romero and Spence funds land, has people at Hotspur Way quietly connecting dots around the striker and winger positions De Zerbi has been most vocal about needing. Next week is being talked about internally as the window's defining stretch."
-  },
-  {
-    date:"16 Aug",
-    text:"Word around N17 is that the Gakpo pursuit has moved well beyond the 'analysis' stage — De Zerbi has apparently spoken to the player directly, and the language around an 'agreement in principle' is being treated inside the building as more than negotiating posture. Whether Liverpool actually let him go before the window shuts is the only question that matters now, and that answer is expected this week."
-  },
-  {
-    date:"16 Aug",
-    text:"The 'source in Nigeria' framing on a blockbuster striker deal is raising eyebrows in the right places — the Osimhen camp has form for using domestic Nigerian media to signal genuine intent rather than idle flattery. Spurs' striker situation, with Solanke still managing his hamstring and Richarlison's exit looking inevitable, means De Zerbi may not have the luxury of playing a long game on this one."
   },
 ];
