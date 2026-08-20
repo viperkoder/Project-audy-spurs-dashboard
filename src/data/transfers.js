@@ -30,7 +30,7 @@ export const TRANSFER_BRIEFS = [
   // "Here We Go" (Fabrizio Romano). Matches this brief's own prior read
   // that PSG were firmly leading the race.
   {
-    player:"Cody Gakpo", e:"🇳🇱", from:"Liverpool", fee:"60m+", like:45, st:"warm", date:"16 Aug",
+    player:"Cody Gakpo", e:"🇳🇱", from:"Liverpool", fee:"60m+", like:48, st:"warm", date:"16 Aug",
     brief:"Reactivated after fresh Dutch and German reporting. Tottenham have opened concrete discussions and Gakpo is reportedly receptive, but Liverpool have not approved a sale and reports of a completed agreement are disputed. Treat as a live negotiation, not a done deal; Liverpool's replacement plans may determine whether it advances."
   },
   {
@@ -107,6 +107,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"20 Aug",
+    text:"Word filtering through from those close to the double-deal talks is that the Marmoush pursuit is not simply a consolation prize if the Savinho structure needed sweetening — insiders suggest De Zerbi has been pushing for both players as distinct additions serving different tactical roles, and that the Man City relationship opened a door rather than created a package. Whether the financial headroom exists to close both in the same window is the question being asked quietly at Hotspur Way."
+  },
+  {
+    date:"20 Aug",
+    text:"There's a growing sense around N17 that the Gakpo file hasn't been set aside despite Romano's latest update muddying the waters — the phrase doing the rounds is that 'Liverpool's answer depends on something that hasn't happened yet,' which those inside the building are interpreting as a dominoes situation rather than a dead end. The next move may not originate at Spurs."
+  },
+  {
     date:"19 Aug",
     text:"Word reaching N17 is that De Zerbi personally intervened to halt a loan move for one of his own players — with the player reportedly already at the airport before the manager pulled the plug. The identity isn't being confirmed by anyone with a name attached, but the SpursWeb framing of 'just before the player boarded a flight' has people inside the building reading it as a very deliberate message about squad depth heading into the season opener."
   },
@@ -121,13 +129,5 @@ export const ANON_BRIEFS = [
   {
     date:"18 Aug",
     text:"There's quiet chatter that the Richarlison situation is considerably more tangled than the clean 'ready to sell' narrative suggests — contract clauses, PSR calculations and the player's own reluctance to drop into a lesser league are all said to be complicating what looked like a straightforward exit. Everton's below-asking bid has apparently not been the only lowball offer to land on Daniel Levy's desk this week."
-  },
-  {
-    date:"17 Aug",
-    text:"Word around N17 is that the Vicario situation has quietly shifted gear — Inside Futbol's framing of a deal that 'accelerates quickly' and could be 'closed tomorrow' is being taken more seriously than the slow-burn Juventus loan talk of recent weeks suggested. Whether the fee and wage structure can actually be reconciled before the window shuts is the question Spurs' bean-counters are working through right now."
-  },
-  {
-    date:"17 Aug",
-    text:"The double-deal framing doing the rounds — 'terms agreed' and 'demands met' per Football365 — is vague enough to cover almost anything, but the timing, coming the same week Romero and Spence funds land, has people at Hotspur Way quietly connecting dots around the striker and winger positions De Zerbi has been most vocal about needing. Next week is being talked about internally as the window's defining stretch."
   },
 ];
