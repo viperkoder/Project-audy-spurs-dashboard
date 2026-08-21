@@ -11,7 +11,7 @@
 // flagged in `note` — treat as indicative, not exact, until a fee is
 // officially confirmed in GBP.
 //
-// Last verified: 16 Aug 2026.
+// Last verified: 21 Aug 2026.
 
 // ── Done deals — money already committed ────────────────────────────────
 export const CONFIRMED_SPEND = [
@@ -54,7 +54,7 @@ export const IN_PROGRESS_SALES = [
 ];
 
 export const IN_PROGRESS_BUYS = [
-  {player:"Savinho",           from:"Man City",    feeGBP:60, likelihood:74},
+  {player:"Savinho",           from:"Man City",    feeGBP:85, likelihood:92, note:"Reported £75m guaranteed plus £10m add-ons; agreement reached, completion not yet announced by either club"},
   {player:"Cody Gakpo",        from:"Liverpool",   feeGBP:60, likelihood:52, note:"Live talks reported; Liverpool approval not confirmed"},
   {player:"Victor Osimhen",    from:"Galatasaray", feeGBP:55, likelihood:40},
   {player:"Endrick",           from:"Real Madrid", feeGBP:0,  likelihood:35, note:"Loan; fee not confirmed"},
