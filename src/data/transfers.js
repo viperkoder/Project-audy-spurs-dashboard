@@ -107,6 +107,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"21 Aug",
+    text:"Word filtering out of the Savinho talks is that the Man City relationship hasn't closed with one deal — those close to the negotiations suggest De Zerbi has been explicit that Marmoush serves a genuinely different tactical purpose to Savinho, and that the double raid was always the intent rather than a package sweetener. The question being asked quietly at Hotspur Way is whether the financial architecture can absorb both before the window shuts."
+  },
+  {
+    date:"21 Aug",
+    text:"There's a growing sense that Vicario's loan departure to Juventus, confirmed quietly without fanfare, has quietly accelerated a decision on the goalkeeper succession plan — the Verbruggen file, which had gone conspicuously silent, is said to be back on the desk. Whether the loan fee and saved wages actually move the needle on Brighton's asking price is another matter."
+  },
+  {
     date:"20 Aug",
     text:"Word filtering through from those close to the double-deal talks is that the Marmoush pursuit is not simply a consolation prize if the Savinho structure needed sweetening — insiders suggest De Zerbi has been pushing for both players as distinct additions serving different tactical roles, and that the Man City relationship opened a door rather than created a package. Whether the financial headroom exists to close both in the same window is the question being asked quietly at Hotspur Way."
   },
@@ -121,13 +129,5 @@ export const ANON_BRIEFS = [
   {
     date:"19 Aug",
     text:"There's quiet murmuring that Tottenham's striker pursuit may not be as straightforward as the Osimhen headlines suggest — a source described by Football365 as a 'Tottenham insider' has apparently been telling people the target in question isn't rated meaningfully above Richarlison, which raises the question of whether De Zerbi is fully aligned with the recruitment push or whether this one is being driven from above. The next 72 hours are being watched carefully."
-  },
-  {
-    date:"18 Aug",
-    text:"Word doing the rounds at N17 is that Savinho's deal landing has not killed off the Gakpo pursuit — if anything, sources close to the situation suggest De Zerbi has been pushing hard for a second attacking addition before the window shuts, with the implication that Liverpool's price and their own replacement plans are the only remaining obstacles. The phrase 'several things need to happen' is being read inside the building as a checklist being quietly worked through, not a door closing."
-  },
-  {
-    date:"18 Aug",
-    text:"There's quiet chatter that the Richarlison situation is considerably more tangled than the clean 'ready to sell' narrative suggests — contract clauses, PSR calculations and the player's own reluctance to drop into a lesser league are all said to be complicating what looked like a straightforward exit. Everton's below-asking bid has apparently not been the only lowball offer to land on Daniel Levy's desk this week."
   },
 ];
