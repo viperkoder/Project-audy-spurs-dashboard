@@ -13,6 +13,8 @@
 // updateNewsFallback(), which now filters every headline through
 // isSpursRelevant() before writing here (see shared.js + update-dashboard.js).
 export const NEWS = [
+  {title:"Team news: Porro, Van de Ven and Sarr out of Brentford opener", source:"Tottenham Hotspur", date:"21 Aug 2026", tag:"Official", url:"https://www.tottenhamhotspur.com/news/1086430/team-news-porro-van-de-ven-out-of-opener-at-brentford"},
+  {title:"Micky van de Ven named captain in five-player leadership group", source:"Reuters", date:"21 Aug 2026", tag:"Club", url:"https://www.reuters.com/sports/soccer/van-de-ven-main-tottenham-skipper-de-zerbi-names-five-captains-2026-08-21/"},
   {title:"Tottenham transfer news LIVE: Savinho breakthrough, Marmoush update, double swoop latest", source:"football.london", date:"21 Aug 2026", tag:"Transfer", url:"https://www.football.london/tottenham-hotspur-fc/transfer-news/tottenham-transfer-news-live-savinho-34493992"},
   {title:"Tottenham transfer news recap: Blockbuster Savinho and Marmoush talks, Neto price, Gakpo confusion", source:"football.london", date:"21 Aug 2026", tag:"Transfer", url:"https://www.football.london/tottenham-hotspur-fc/transfer-news/tottenham-transfer-news-live-blockbuster-34487036"},
   {title:"Spurs agree £75m deal to sign Man City's Savinho", source:"BBC Sport Spurs", date:"21 Aug 2026", tag:"Official", url:"https://www.bbc.co.uk/sport/football/articles/cwyl0r8g4lwo?at_medium=RSS&amp;at_campaign=rss"},

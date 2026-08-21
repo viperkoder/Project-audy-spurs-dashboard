@@ -1,10 +1,14 @@
 // Transfer Intelligence — Summer 2026
 // Edit this file alone for transfer rumours, confirmed signings, departures.
-// Last manual verification pass: 9 Aug 2026 (cross-checked against live reporting).
+// Last manual verification pass: 21 Aug 2026 (cross-checked against Sky Sports and Reuters).
 // Automation was down 4-17 Jul (stale project path + node PATH issue under
 // launchd) — fixed via automation/install-launchd.sh, see automation/SETUP.md.
 
 export const TRANSFER_BRIEFS = [
+  {
+    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"£75m + £10m add-ons", like:92, st:"hot", date:"21 Aug",
+    brief:"Club-to-club agreement reported by Sky Sports and Reuters. A medical was scheduled for 21 Aug, but neither club had announced the signing at the latest verification. Keep this as agreement reached / pending completion, not a confirmed Spurs signing, until the club announcement is published."
+  },
   // NOTE: Fernandes REMOVED — confirmed signing as of 1 Jul 2026
   // NOTE: Tonali REMOVED — confirmed signing as of 3 Jul 2026, see CONFIRMED below
   // NOTE: Rafael Leao REMOVED 9 Aug 2026 — interest cooled, never became a
@@ -48,10 +52,6 @@ export const TRANSFER_BRIEFS = [
 ];
 
 export const CONFIRMED = [
-  {
-    player:"Savinho", e:"🏳️", from:"Man City", fee:"~£60m", role:"TBC", date:"2026-08-18",
-    note:"Fabrizio Romano 'here we go' confirmed per Football365 and Google News aggregation ('Romano gives here we go to next Tottenham transfer as offer is accepted'). Remove from TRANSFER_BRIEFS and add to CONFIRMED. Fee to be verified once official club announcement published. — auto-added, verify flag/role manually"
-  },
   {
     player:"Sandro Tonali", e:"🇮🇹", from:"Newcastle", fee:"100m", role:"DM", date:"2026-07-03",
     note:"Confirmed by BBC, Sky Sports, football.london and Romano. Initial fee £92.5m rising to £100m with add-ons. 6-year deal. De Zerbi connection central to move. Role confirmed as DM (his primary position at Milan/Newcastle)."
