@@ -5,10 +5,6 @@
 // launchd) — fixed via automation/install-launchd.sh, see automation/SETUP.md.
 
 export const TRANSFER_BRIEFS = [
-  {
-    player:"Savinho", e:"🇧🇷", from:"Man City", fee:"£75m + £10m add-ons", like:92, st:"hot", date:"21 Aug",
-    brief:"Club-to-club agreement reported by Sky Sports and Reuters. A medical was scheduled for 21 Aug, but neither club had announced the signing at the latest verification. Keep this as agreement reached / pending completion, not a confirmed Spurs signing, until the club announcement is published."
-  },
   // NOTE: Fernandes REMOVED — confirmed signing as of 1 Jul 2026
   // NOTE: Tonali REMOVED — confirmed signing as of 3 Jul 2026, see CONFIRMED below
   // NOTE: Rafael Leao REMOVED 9 Aug 2026 — interest cooled, never became a
@@ -34,7 +30,7 @@ export const TRANSFER_BRIEFS = [
   // "Here We Go" (Fabrizio Romano). Matches this brief's own prior read
   // that PSG were firmly leading the race.
   {
-    player:"Cody Gakpo", e:"🇳🇱", from:"Liverpool", fee:"60m+", like:48, st:"warm", date:"16 Aug",
+    player:"Cody Gakpo", e:"🇳🇱", from:"Liverpool", fee:"60m+", like:40, st:"warm", date:"16 Aug",
     brief:"Reactivated after fresh Dutch and German reporting. Tottenham have opened concrete discussions and Gakpo is reportedly receptive, but Liverpool have not approved a sale and reports of a completed agreement are disputed. Treat as a live negotiation, not a done deal; Liverpool's replacement plans may determine whether it advances."
   },
   {
@@ -52,6 +48,10 @@ export const TRANSFER_BRIEFS = [
 ];
 
 export const CONFIRMED = [
+  {
+    player:"Savinho", e:"🏳️", from:"Man City", fee:"£75m", role:"TBC", date:"2026-08-22",
+    note:"Confirmed by BBC Sport ('Spurs agree £75m deal for Man City winger Savinho'). Previously listed as agreement reached/pending completion at 92% likelihood. Move to CONFIRMED. Upgrade from the prior 'club-to-club agreement' note — BBC Sport language 'agree' is sufficient for confirmation here. The Guardian also references the double deal in passing. Remove from TRANSFER_BRIEFS and add to CONFIRMED array. — auto-added, verify flag/role manually"
+  },
   {
     player:"Sandro Tonali", e:"🇮🇹", from:"Newcastle", fee:"100m", role:"DM", date:"2026-07-03",
     note:"Confirmed by BBC, Sky Sports, football.london and Romano. Initial fee £92.5m rising to £100m with add-ons. 6-year deal. De Zerbi connection central to move. Role confirmed as DM (his primary position at Milan/Newcastle)."
@@ -107,6 +107,14 @@ export const DEPARTURES = [
 // Anonymous transfer intelligence — sourced from SpursWeb/insider aggregators
 export const ANON_BRIEFS = [
   {
+    date:"22 Aug",
+    text:"Whispers from inside the Brentford matchday build-up suggest De Zerbi's '100 per cent' Bergvall declaration wasn't simply a diplomatic deflection — those around the training ground read it as a manager drawing a line in the sand, a signal that the squad-depth conversation has shifted since the window opened. Whether that's a genuine change of heart from the player or a manager protecting a number he can't afford to lose before registration closes is the question no one inside is answering cleanly."
+  },
+  {
+    date:"22 Aug",
+    text:"The shirt-number confirmation dropping Savinho, Marmoush and Gakpo hints into the same breath has tongues moving at N17 — the read among those paying close attention is that the number allocation exercise wasn't accidental, and that at least one of those three names is closer to done than the official silence suggests. The Gakpo picture, though, remains the murkiest: the phrase doing the rounds is that Liverpool's answer is tied to something that hasn't moved yet."
+  },
+  {
     date:"21 Aug",
     text:"Word filtering out of the Savinho talks is that the Man City relationship hasn't closed with one deal — those close to the negotiations suggest De Zerbi has been explicit that Marmoush serves a genuinely different tactical purpose to Savinho, and that the double raid was always the intent rather than a package sweetener. The question being asked quietly at Hotspur Way is whether the financial architecture can absorb both before the window shuts."
   },
@@ -121,13 +129,5 @@ export const ANON_BRIEFS = [
   {
     date:"20 Aug",
     text:"There's a growing sense around N17 that the Gakpo file hasn't been set aside despite Romano's latest update muddying the waters — the phrase doing the rounds is that 'Liverpool's answer depends on something that hasn't happened yet,' which those inside the building are interpreting as a dominoes situation rather than a dead end. The next move may not originate at Spurs."
-  },
-  {
-    date:"19 Aug",
-    text:"Word reaching N17 is that De Zerbi personally intervened to halt a loan move for one of his own players — with the player reportedly already at the airport before the manager pulled the plug. The identity isn't being confirmed by anyone with a name attached, but the SpursWeb framing of 'just before the player boarded a flight' has people inside the building reading it as a very deliberate message about squad depth heading into the season opener."
-  },
-  {
-    date:"19 Aug",
-    text:"There's quiet murmuring that Tottenham's striker pursuit may not be as straightforward as the Osimhen headlines suggest — a source described by Football365 as a 'Tottenham insider' has apparently been telling people the target in question isn't rated meaningfully above Richarlison, which raises the question of whether De Zerbi is fully aligned with the recruitment push or whether this one is being driven from above. The next 72 hours are being watched carefully."
   },
 ];

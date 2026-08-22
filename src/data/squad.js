@@ -20,6 +20,7 @@
 //     a decision once confirmed (would move to DEPARTURES in transfers.js, not just squad.js)
 
 export const SQUAD = [
+  {name:"S. ", pos:"TBC", e:"🏳️", apps:0, g:0, con:"TBC", wc:null, st:"NEW — auto-added, verify pos/contract manually", sc:"cyan"},
   // GOALKEEPERS
   {name:"A. Kinsky",      pos:"GK",e:"🇨🇿",apps:0, g:0,con:"2031+1",wc:null,   st:"NO.1 — NEW 5YR DEAL",  sc:"green"},
   {name:"M. Dubravka",    pos:"GK",e:"🇸🇰",apps:0, g:0,con:"TBC",   wc:null,   st:"NEW — joins Jul 1",    sc:"cyan"},
@@ -58,8 +59,8 @@ export const SQUAD = [
 
 // Injury Centre — active injuries only. Source: premierinjuries.com
 export const INJURIES = [
-  {name:"Micky van de Ven",flag:"NL",emoji:"🇳🇱",pos:"CB",issue:"Minor pre-season issue",sev:"short",ret:"After 22 Aug — exact return TBC"},
-  {name:"Pape Matar Sarr", flag:"SN",emoji:"🇸🇳",pos:"CM",issue:"Hamstring pain",          sev:"short",ret:"After 22 Aug — described as not serious"},
+  {name:"Micky van de Ven",flag:"NL",emoji:"🇳🇱",pos:"CB",issue:"Minor pre-season issue — confirmed OUT for MD1 vs Brentford per official Tottenham team news (Google News: 'Pedro Porro, van de Ven out of opener at Brentford — Tottenham Hotspur official')",sev:"short",ret:"After 22 Aug — exact return TBC, unchanged"},
+  {name:"Pape Matar Sarr", flag:"SN",emoji:"🇸🇳",pos:"CM",issue:"Hamstring pain — confirmed OUT for MD1 vs Brentford per official Tottenham team news",          sev:"short",ret:"After 22 Aug — described as not serious, unchanged"},
   {name:"Xavi Simons",     flag:"NL",emoji:"🇳🇱",pos:"AM",issue:"ACL right knee",        sev:"long",  ret:"20 Feb 2027"},
   {name:"Wilson Odobert",  flag:"FR",emoji:"🇫🇷",pos:"LW",issue:"ACL left knee",          sev:"long",  ret:"28 Nov 2026"},
   // NOTE: Kudus REMOVED from active injuries 17 Jul 2026 — back in full pre-season
